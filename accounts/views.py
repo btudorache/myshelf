@@ -1,8 +1,18 @@
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render
 
 from .forms import (
     UserRegistrationForm,
 )
+
+
+# Extended LoginView to add section to context
+class CustomLoginView(LoginView):
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        context['section'] = 'login'
+        return context
 
 
 def register(request):
@@ -18,4 +28,4 @@ def register(request):
             return render(request, 'accounts/user/register_done.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
-        return render(request, 'accounts/user/register.html', {'user_form': user_form})
+        return render(request, 'accounts/user/register.html', {'user_form': user_form, 'section': 'register'})

@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-md navbar-light" id="navigation_bar">
       <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item {% if section == "home" %}active{% endif %}">
             <a class="nav-link" href="{% url "home" %}">Home</a>
           </li>
           <li class="nav-item">
@@ -51,11 +51,11 @@
               <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             </li>
           {% else %}
-            <li class="nav-item">
+            <li class="nav-item {% if section == "register" %}active{% endif %}">
               <a class="nav-link" href="{% url "register" %}">Register</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url "login" %}">Login</a>
+            <li class="nav-item {% if section == "login" %}active{% endif %}">
+              <a class="nav-link " href="{% url "login" %}">Login</a>
             </li>
           {% endif %}
         </ul>
