@@ -1,5 +1,9 @@
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
+from .models import Profile
 
 from .forms import (
     UserRegistrationForm,
@@ -25,7 +29,15 @@ def register(request):
             new_user.set_password(user_form.cleaned_data['password'])
             # Finally save the form
             new_user.save()
-            return render(request, 'accounts/user/register_done.html', {'new_user': new_user})
+
+            # Create profile for the new user
+            Profile.objects.create(user=new_user)
+            return render(request, 'accounts/register_done.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
-        return render(request, 'accounts/user/register.html', {'user_form': user_form, 'section': 'register'})
+        return render(request, 'accounts/register.html', {'user_form': user_form, 'section': 'register'})
+
+@login_required
+def user_detail(request, username):
+    user = get_object_or_404(User, username=username, is_active=True)
+    return render(request, 'accounts/user/user_detail.html', {'section': 'profile', 'user': user})
