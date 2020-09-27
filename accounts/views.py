@@ -59,6 +59,7 @@ def update_user(request):
             return redirect(request.user.profile)
     else:
         user_update_form = UserEditForm(instance=request.user)
-        profile_update_form = ProfileEditForm(instance=request.user)
+        profile_update_form = ProfileEditForm(instance=request.user.profile)
     return render(request, 'accounts/user/user_update.html', {'user_form': user_update_form,
-                                                              'profile_form': profile_update_form})
+                                                              'profile_form': profile_update_form,
+                                                              'section': 'profile'})
