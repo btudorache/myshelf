@@ -1,5 +1,6 @@
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -7,6 +8,8 @@ from .models import Profile
 
 from .forms import (
     UserRegistrationForm,
+    UserEditForm,
+    ProfileEditForm,
 )
 
 
@@ -41,3 +44,21 @@ def register(request):
 def user_detail(request, username):
     user = get_object_or_404(User, username=username, is_active=True)
     return render(request, 'accounts/user/user_detail.html', {'section': 'profile', 'user': user})
+
+
+@login_required
+def update_user(request):
+    if request.method == 'POST':
+        user_update_form = UserEditForm(instance=request.user, data=request.POST)
+        profile_update_form = ProfileEditForm(instance=request.user.profile, data=request.POST, files=request.FILES)
+        if user_update_form.is_valid() and profile_update_form.is_valid():
+            user_update_form.save()
+            profile_update_form.save()
+            messages.success(request, 'Profile updated successfully')
+
+            return redirect(request.user.profile)
+    else:
+        user_update_form = UserEditForm(instance=request.user)
+        profile_update_form = ProfileEditForm(instance=request.user)
+    return render(request, 'accounts/user/user_update.html', {'user_form': user_update_form,
+                                                              'profile_form': profile_update_form})
