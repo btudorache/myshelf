@@ -1,0 +1,10 @@
+#navigation_bar {
+    background-color: #FFA500;
+    margin-bottom: 10px;
+}
+
+.row-content {
+    margin: 0px auto;
+    padding: 20px 0px;
+    border-bottom: 1px ridge;
+}
