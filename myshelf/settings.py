@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'books.apps.BooksConfig',
     'accounts.apps.AccountsConfig',
     'layout.apps.LayoutConfig',
     
