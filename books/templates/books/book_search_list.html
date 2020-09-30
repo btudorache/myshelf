@@ -5,11 +5,11 @@
 {% block content %}
   {% for book in books %}
     <div class="h-30 row row-content align-items-center" id="book-row">
-      <div class="col-sm col-md-3">
-        <img class="img-thumbnail img-fluid" src="{{ book.cover.url }}">
+      <div class="col-sm-12 col-md-3">
+        <img class="mx-auto d-block img-fluid" src="{{ book.cover.url }}">
       </div>
-      <div class="col-sm col-md-9">
-        <div class="card mb-3">
+      <div class="col-sm-12 col-md-8">
+        <div class="card mb-4">
           <div class="card-body h-80">
             <h5 class="card-title">Title: {{ book.title }}</h5>
             {% for author in book.author.all %}
