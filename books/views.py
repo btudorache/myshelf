@@ -16,4 +16,4 @@ def book_search_list(request, genre_id=None):
 
 def book_detail(request, book_id):
     book = get_object_or_404(Book, id=book_id)
-    return render(request, 'books/book_detail.html', {'book': book, 'section': 'book_detail'})
+    return render(request, 'books/book_detail.html', {'book': book, 'section': 'search'})

@@ -11,9 +11,7 @@
         <div class="card mb-4">
           <div class="card-body h-80">
             <h5 class="card-title">Title: {{ book.title }}</h5>
-            {% for author in book.author.all %}
-              <h6 class="card-subtitle mb-2 text-muted">Author: {{ author }}</h6>
-            {% endfor %}
+            <h6 class="card-subtitle mb-2 text-muted">Author: {% for author in book.author.all %} {{ author }} {% endfor %}</h6>
             <p class="card-text">{{ book.description }}</p>
           </div>
         </div>
