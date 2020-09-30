@@ -26,7 +26,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Shelf</a>
             </li>
-            <li class="nav-item {% if section == "search" %}active{% endif %}">
+            <li class="nav-item {% if section == "search" or section == "book_detail" %}active{% endif %}">
               <a class="nav-link" href="{% url 'book_list' %}">Search</a>
             </li>
             <li class="nav-item">
@@ -72,6 +72,7 @@
               <h3>Genres</h3>
               <p class='text-muted'>find books by genre
                 <ul class="list-group">
+                  <li class="list-group-item list-group-item-light"><a href="{% url 'book_list' %}">All books</a></li>
                   {% for genre in genres %}
                     <li class="list-group-item list-group-item-light"><a href="{% url 'book_list_by_genre' genre.id %}">{{ genre.genre }}</a></li>
                   {% endfor %}
