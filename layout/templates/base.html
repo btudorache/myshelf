@@ -25,8 +25,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Shelf</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Search</a>
+          <li class="nav-item {% if section == "search" %}active{% endif %}">
+            <a class="nav-link" href="{% url 'book_list' %}">Search</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Lists</a>

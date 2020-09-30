@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+  {% for book in books %}
+    <div class="h-30 row row-content align-items-center" id="book-row">
+      <div class="col-sm col-md-3">
+        <img class="img-thumbnail img-fluid" src="{{ book.cover.url }}">
+      </div>
+      <div class="col-sm col-md-9">
+        <div class="card mb-3">
+          <div class="card-body h-80">
+            <h5 class="card-title">Title: {{ book.title }}</h5>
+            {% for author in book.author.all %}
+              <h6 class="card-subtitle mb-2 text-muted">Author: {{ author }}</h6>
+            {% endfor %}
+            <p class="card-text">{{ book.description }}</p>
+          </div>
+        </div>
+
+        <div class="card mb-3 h-20">
+          <div class="card-body">
+            <p>salut</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

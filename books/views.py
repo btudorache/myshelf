@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Book
+
+
+def book_search_list(request):
+    books = Book.objects.all()
+    return render(request, 'books/book_search_list.html', {'books': books, 'section': 'search'})
