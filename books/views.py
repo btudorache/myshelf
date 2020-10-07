@@ -1,6 +1,12 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 
-from .models import Book, Genre
+from .models import (
+    Book,
+    Genre,
+    BookRating,
+)
+from .forms import BookRateForm
 
 
 def book_search_list(request, genre_id=None):
@@ -15,5 +21,31 @@ def book_search_list(request, genre_id=None):
 
 
 def book_detail(request, book_id):
+    # view for both adding a new rating or updating and old one
     book = get_object_or_404(Book, id=book_id)
-    return render(request, 'books/book_detail.html', {'book': book, 'section': 'search'})
+    try:
+        rating = BookRating.objects.get(rated_by=request.user, book_rated=book)
+    except BookRating.DoesNotExist:
+        rating = None
+
+    if request.method == 'POST':
+        if rating:
+            book_rate_form = BookRateForm(instance=rating, data=request.POST)
+        else:
+            book_rate_form = BookRateForm(data=request.POST)
+
+        if book_rate_form.is_valid() and rating:
+            rating = book_rate_form.save()
+            messages.success(request, 'Rating updated successfully!')
+        elif book_rate_form.is_valid():
+            rating = book_rate_form.save(commit=False)
+            rating.rated_by = request.user
+            rating.book_rated = book
+            rating.save()
+            messages.success(request, 'New rating added successfully!')
+    else:
+        book_rate_form = BookRateForm()
+    return render(request, 'books/book_detail.html', {'book': book,
+                                                      'section': 'search',
+                                                      'book_rate_form': book_rate_form,
+                                                      'rating': rating})
