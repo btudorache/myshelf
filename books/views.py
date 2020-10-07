@@ -12,6 +12,7 @@ from .forms import BookRateForm
 
 @login_required
 def book_search_list(request, genre_id=None):
+    # TODO: add average rating and your rating to every book in the list
     if genre_id is None:
         books = Book.objects.all()
     else:

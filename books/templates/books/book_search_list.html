@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %}{{ user.get_full_name }}{% endblock %}
+{% block title %}List{% endblock %}
 
 {% block content %}
+  <div class="search-bar">
+    <div class="row">
+      <div class="col">
+        <h3>Search</h3>
+        <p class='text-muted'>look for a specific book</p>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   {% for book in books %}
     <div class="h-30 row row-content align-items-center" id="book-row">
       <div class="col-sm-4 col-md-3">
