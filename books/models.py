@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from PIL import Image
 
@@ -38,3 +39,15 @@ class Book(models.Model):
             output_size = (233, 350)
             img.thumbnail(output_size)
             img.save(self.cover.path)
+
+
+class BookRating(models.Model):
+    RATING_CHOICES = [(str(i), str(i)) for i in range(1, 6)]
+
+    rated_by = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                 related_name='books_rated',
+                                 on_delete=models.CASCADE)
+    rate = models.CharField(max_length=5, choices=RATING_CHOICES)
+    book_rated = models.ForeignKey(Book,
+                                   related_name='ratings',
+                                   on_delete=models.CASCADE)

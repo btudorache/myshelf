@@ -26,7 +26,7 @@ def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
-            # Save the form but don't commmit the action
+            # Save the form but don't commit the action
             new_user = user_form.save(commit=False)
             # Take care of the password hashing
             new_user.set_password(user_form.cleaned_data['password'])
