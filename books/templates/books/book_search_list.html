@@ -5,19 +5,30 @@
 {% block content %}
   {% for book in books %}
     <div class="h-30 row row-content align-items-center" id="book-row">
-      <div class="col-sm-12 col-md-3">
+      <div class="col-sm-4 col-md-3">
         <img alt="book-cover" class="mx-auto d-block img-fluid" src="{{ book.cover.url }}">
       </div>
-      <div class="col-sm-12 col-md-8">
+      <div class="col-sm-8 col-md-8">
         <div class="card mb-4">
           <div class="card-body h-80">
             <h5 class="card-title">{{ book.title }}</h5>
             <h6 class="card-subtitle mb-2 text-muted"> {% for author in book.author.all %} {{ author }} {% endfor %}</h6>
             <p class="card-text">Genres: {% for genre in book.genre.all %}<a href="{%  url 'book_list_by_genre' genre.id %}"> {{ genre.genre }} </a>{% endfor %}</p>
+
+            <div class="row">
+              <div class="col-12 col-sm-4">
+                <a href="{% url 'book_detail' book.id %}" class="btn btn-primary btn-lg active" role="button">See book</a>
+              </div>
+              <div class="col-12 col-sm-4">
+
+              </div>
+              <div class="col-12 col-sm-4">
+
+              </div>
+            </div>
           </div>
         </div>
 
-        <a href="{% url 'book_detail' book.id %}" class="btn btn-primary btn-lg active" role="button">See book</a>
       </div>
     </div>
   {% endfor %}

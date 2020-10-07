@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import (
     Book,
@@ -9,6 +10,7 @@ from .models import (
 from .forms import BookRateForm
 
 
+@login_required
 def book_search_list(request, genre_id=None):
     if genre_id is None:
         books = Book.objects.all()
@@ -20,6 +22,7 @@ def book_search_list(request, genre_id=None):
                                                            'genres': genres})
 
 
+@login_required
 def book_detail(request, book_id):
     # view for both adding a new rating or updating and old one
     book = get_object_or_404(Book, id=book_id)
