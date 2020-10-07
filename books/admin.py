@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Genre, Author, Book
+from .models import Genre, Author, Book, BookRating
 
 
 @admin.register(Genre)
@@ -15,3 +15,8 @@ class AuthorAdmin(admin.ModelAdmin):
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ['title']
+
+
+@admin.register(BookRating)
+class BookRatingAdmin(admin.ModelAdmin):
+    list_display = ['rated_by', 'rate', 'book_rated']
