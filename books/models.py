@@ -12,7 +12,7 @@ class Genre(models.Model):
 
 
 class Author(models.Model):
-    first_name = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50)
     description = models.TextField(blank=True, null=True)
 
@@ -22,7 +22,9 @@ class Author(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=50)
-    author = models.ManyToManyField(Author)
+    author = models.ForeignKey(Author,
+                               related_name='books',
+                               on_delete=models.CASCADE)
     genre = models.ManyToManyField(Genre)
     description = models.TextField(blank=True, null=True)
     cover = models.ImageField(default='default_book.jpg', upload_to='book_covers/')
