@@ -12,11 +12,13 @@ from .forms import BookRateForm, SearchForm
 
 
 @login_required
-def book_search_list(request, genre_id=None):
+def book_search_list(request, genre_id=None, author_id=None):
     search_form = SearchForm()
     if genre_id:
         books = Book.objects.filter(genre__id=genre_id)
     # Form variable 'query' is given to the request dictionary if the form on the website is submitted
+    elif author_id:
+        books = Book.objects.filter(author__id=author_id)
     elif 'query' in request.GET:
         search_form = SearchForm(data=request.GET)
         if search_form.is_valid():

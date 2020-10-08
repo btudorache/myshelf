@@ -9,7 +9,7 @@
       <div class="col">
         <h3>Search</h3>
         <p class='text-muted'>look for a specific book</p>
-        <form method="get" class="form-inline my-2 my-lg-0">
+        <form action="{% url 'book_list_search' %}" method="get" class="form-inline my-2 my-lg-0">
           {{ search_form|crispy }}
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
@@ -26,7 +26,7 @@
         <div class="card mb-4">
           <div class="card-body h-80">
             <h5 class="card-title">{{ book.title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted"> {% for author in book.author.all %} {{ author }} {% endfor %}</h6>
+            <h6 class="card-subtitle mb-2 text-muted"> {% for author in book.author.all %}<a href="{% url 'book_list_by_author' author.id %}"> {{ author }} </a>{% endfor %}</h6>
             <p class="card-text">Genres: {% for genre in book.genre.all %}<a href="{%  url 'book_list_by_genre' genre.id %}"> {{ genre.genre }} </a>{% endfor %}</p>
 
             <div class="row">

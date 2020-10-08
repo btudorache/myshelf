@@ -12,7 +12,7 @@
         <div class="card mb-4">
           <div class="card-body h-80">
             <h5 class="card-title">Title: {{ book.title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Author: {% for author in book.author.all %} {{ author }} {% endfor %}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Author: {% for author in book.author.all %}<a href="{% url 'book_list_by_author' author.id %}"> {{ author }} </a>{% endfor %}</h6>
             <p class="card-text">{{ book.description }}</p>
 
             {% if user.is_authenticated  %}
