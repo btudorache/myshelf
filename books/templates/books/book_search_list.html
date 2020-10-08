@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}List{% endblock %}
 
@@ -8,9 +9,9 @@
       <div class="col">
         <h3>Search</h3>
         <p class='text-muted'>look for a specific book</p>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form method="get" class="form-inline my-2 my-lg-0">
+          {{ search_form|crispy }}
+          <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
     </div>

@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -7,20 +8,34 @@ from .models import (
     Genre,
     BookRating,
 )
-from .forms import BookRateForm
+from .forms import BookRateForm, SearchForm
 
 
 @login_required
 def book_search_list(request, genre_id=None):
-    # TODO: add average rating and your rating to every book in the list
-    if genre_id is None:
-        books = Book.objects.all()
-    else:
+    search_form = SearchForm()
+    if genre_id:
         books = Book.objects.filter(genre__id=genre_id)
+    # Form variable 'query' is given to the request dictionary if the form on the website is submitted
+    elif 'query' in request.GET:
+        search_form = SearchForm(data=request.GET)
+        if search_form.is_valid():
+            search_object = search_form.cleaned_data['query']
+            # Search object must have more than 1 letter
+            if len(search_object) == 1:
+                books = None
+            else:
+                books = Book.objects.filter(Q(title__icontains=search_object) |
+                                            Q(author__first_name__contains=search_object) |
+                                            Q(author__last_name__contains=search_object))
+    else:
+        search_form = SearchForm()
+        books = Book.objects.all()
     genres = Genre.objects.all()
     return render(request, 'books/book_search_list.html', {'books': books,
                                                            'section': 'search',
-                                                           'genres': genres})
+                                                           'genres': genres,
+                                                           'search_form': search_form})
 
 
 @login_required
