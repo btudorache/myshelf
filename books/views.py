@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -23,7 +22,6 @@ def book_search_list(request, genre_id=None, author_id=None):
         search_form = SearchForm(data=request.GET)
         if search_form.is_valid():
             search_object = search_form.cleaned_data['query']
-            words = search_object.split()
             # Search object must have more than 1 letter
             if len(search_object) == 1:
                 books = None

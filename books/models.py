@@ -69,7 +69,6 @@ class Book(models.Model):
         self.average_rating = (self.average_rating - value / self.num_ratings) * self.num_ratings / (self.num_ratings-1)
 
 
-
 class BookRating(models.Model):
     RATING_CHOICES = [(i, i) for i in range(1, 6)]
 
