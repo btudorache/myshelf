@@ -58,6 +58,17 @@ class Book(models.Model):
 
         return query
 
+    def add_value_to_rating(self, value):
+        self.num_ratings += 1
+        self.update_rating_add(value)
+
+    def update_rating_add(self, value):
+        self.average_rating = (self.num_ratings - 1) / self.num_ratings * self.average_rating + value / self.num_ratings
+
+    def update_rating_delete(self, value):
+        self.average_rating = (self.average_rating - value / self.num_ratings) * self.num_ratings / (self.num_ratings-1)
+
+
 
 class BookRating(models.Model):
     RATING_CHOICES = [(i, i) for i in range(1, 6)]

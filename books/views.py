@@ -45,6 +45,7 @@ def book_detail(request, book_id):
     book = get_object_or_404(Book, id=book_id)
     try:
         rating = BookRating.objects.get(rated_by=request.user, book_rated=book)
+        prev_rating = rating.rate
     except BookRating.DoesNotExist:
         rating = None
 
@@ -53,15 +54,29 @@ def book_detail(request, book_id):
             book_rate_form = BookRateForm(instance=rating, data=request.POST)
         else:
             book_rate_form = BookRateForm(data=request.POST)
-
         if book_rate_form.is_valid() and rating:
+            # remove old rating from the average
+            if book.num_ratings == 1:
+                book.average_rating = 0
+            else:
+                book.update_rating_delete(prev_rating)
+
             rating = book_rate_form.save()
+            # then add the new rating to average
+            book.update_rating_add(rating.rate)
+            book.save()
+
             messages.success(request, 'Rating updated successfully!')
         elif book_rate_form.is_valid():
             rating = book_rate_form.save(commit=False)
             rating.rated_by = request.user
             rating.book_rated = book
             rating.save()
+
+            # add new average_rating and num_ratings to book
+            book.add_value_to_rating(rating.rate)
+            book.save()
+
             messages.success(request, 'New rating added successfully!')
     else:
         book_rate_form = BookRateForm()

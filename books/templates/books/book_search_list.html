@@ -28,7 +28,7 @@
             <h5 class="card-title">{{ book.title }}</h5>
             <h6 class="card-subtitle mb-2 text-muted"><a href="{% url 'book_list_by_author' book.author.id %}">{% if book.author.first_name %}{{ book.author.first_name }}{% endif %} {{ book.author.last_name }}</a></h6>
             <p class="card-text">Genres: {% for genre in book.genre.all %}<a href="{%  url 'book_list_by_genre' genre.id %}"> {{ genre.genre }} </a>{% endfor %}</p>
-            <p><strong>Average rating: {{ book.average_rating }}/5 out of {{ book.num_ratings }} votes</strong></p>
+            <p><strong>Average rating: {{ book.average_rating|floatformat:2 }}/5 out of {{ book.num_ratings }} votes</strong></p>
 
             <div class="row">
               <div class="col-12 col-sm-4">
