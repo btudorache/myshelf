@@ -29,6 +29,8 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre)
     description = models.TextField(blank=True, null=True)
     cover = models.ImageField(default='default_book.jpg', upload_to='book_covers/')
+    num_ratings = models.IntegerField(default=0)
+    average_rating = models.FloatField(default=0)
 
     def __str__(self):
         return f'{self.title}'
@@ -58,12 +60,12 @@ class Book(models.Model):
 
 
 class BookRating(models.Model):
-    RATING_CHOICES = [(str(i), str(i)) for i in range(1, 6)]
+    RATING_CHOICES = [(i, i) for i in range(1, 6)]
 
     rated_by = models.ForeignKey(settings.AUTH_USER_MODEL,
                                  related_name='books_rated',
                                  on_delete=models.CASCADE)
-    rate = models.CharField(max_length=5, choices=RATING_CHOICES)
+    rate = models.IntegerField(choices=RATING_CHOICES)
     book_rated = models.ForeignKey(Book,
                                    related_name='ratings',
                                    on_delete=models.CASCADE)
