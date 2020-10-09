@@ -23,13 +23,21 @@ def book_search_list(request, genre_id=None, author_id=None):
         search_form = SearchForm(data=request.GET)
         if search_form.is_valid():
             search_object = search_form.cleaned_data['query']
+            words = search_object.split()
             # Search object must have more than 1 letter
             if len(search_object) == 1:
                 books = None
             else:
-                books = Book.objects.filter(Q(title__icontains=search_object) |
-                                            Q(author__first_name__contains=search_object) |
-                                            Q(author__last_name__contains=search_object))
+                # if there are more separate words in query, search for each word separately
+                words = search_object.split()
+                qs = [Q(title__icontains=word) |
+                      Q(author__first_name__contains=word) |
+                      Q(author__last_name__contains=word) for word in words]
+                query = qs.pop()
+                # |= is set operator in python
+                for q in qs:
+                    query |= q
+                books = Book.objects.filter(query)
     else:
         search_form = SearchForm()
         books = Book.objects.all()
