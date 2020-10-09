@@ -28,16 +28,7 @@ def book_search_list(request, genre_id=None, author_id=None):
             if len(search_object) == 1:
                 books = None
             else:
-                # if there are more separate words in query, search for each word separately
-                words = search_object.split()
-                qs = [Q(title__icontains=word) |
-                      Q(author__first_name__contains=word) |
-                      Q(author__last_name__contains=word) for word in words]
-                query = qs.pop()
-                # |= is set operator in python
-                for q in qs:
-                    query |= q
-                books = Book.objects.filter(query)
+                books = Book.objects.filter(Book.create_search_query(search_object.split()))
     else:
         search_form = SearchForm()
         books = Book.objects.all()

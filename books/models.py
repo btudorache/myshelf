@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.db.models import Q
 from PIL import Image
 
 
@@ -41,6 +42,19 @@ class Book(models.Model):
             output_size = (233, 350)
             img.thumbnail(output_size)
             img.save(self.cover.path)
+
+    # create Q query list for books objects filter from search bar input
+    @staticmethod
+    def create_search_query(words):
+        qs = [Q(title__icontains=word) |
+              Q(author__first_name__contains=word) |
+              Q(author__last_name__contains=word) for word in words]
+        query = qs.pop()
+        # |= is set operator in python
+        for q in qs:
+            query |= q
+
+        return query
 
 
 class BookRating(models.Model):
