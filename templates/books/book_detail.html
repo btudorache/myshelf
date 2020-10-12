@@ -21,7 +21,7 @@
                 <p><strong>You haven't rated this book</strong></p>
               {% endif %}
 
-              <form method="post" enctype="multipart/form-data">
+              <form action="{% url 'book_rate' book.id %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="row">
                   <div class="col-12 col-sm-4">

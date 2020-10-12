@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.urls import reverse
 from django.db import models
 from django.db.models import Q
 from PIL import Image
@@ -34,6 +35,9 @@ class Book(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+    def get_absolute_url(self):
+        return reverse('book_detail', args=[self.id])
 
     def save(self, *args, **kwargs):
         super(Book, self).save(*args, **kwargs)
