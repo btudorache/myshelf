@@ -29,8 +29,8 @@
             <li class="nav-item {% if section == "search" %}active{% endif %}">
               <a class="nav-link" href="{% url 'book_list' %}">Search</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Social</a>
+            <li class="nav-item {% if section == "social" %}active{% endif %}">
+              <a class="nav-link" href="{% url 'user_list' %}">Social</a>
             </li>
           </ul>
         </div>
