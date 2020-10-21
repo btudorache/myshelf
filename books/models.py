@@ -4,6 +4,8 @@ from django.db import models
 from django.db.models import Q
 from PIL import Image
 
+import datetime
+
 
 class Genre(models.Model):
     genre = models.CharField(max_length=50, unique=True)
@@ -93,3 +95,17 @@ class BookRating(models.Model):
             rating = None
 
         return rating
+
+
+class BookReview(models.Model):
+    book_reviewed = models.ForeignKey(Book,
+                                      related_name='reviews',
+                                      on_delete=models.CASCADE)
+    reviewer = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                 related_name='books_reviewed',
+                                 on_delete=models.CASCADE)
+    text = models.TextField()
+    datetime = models.DateField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-datetime',)

@@ -7,6 +7,7 @@ from .models import (
     Book,
     Genre,
     BookRating,
+    BookReview,
 )
 from .forms import BookRateForm, SearchForm
 
@@ -44,11 +45,13 @@ def book_detail(request, book_id):
     book = get_object_or_404(Book, id=book_id)
     book_rate_form = BookRateForm()
     rating = BookRating.get_book_rating(request.user, book)
+    reviews = BookReview.objects.filter(book_reviewed=book)[:5]
 
     return render(request, 'books/book_detail.html', {'book': book,
                                                       'section': 'search',
                                                       'book_rate_form': book_rate_form,
-                                                      'rating': rating})
+                                                      'rating': rating,
+                                                      'reviews': reviews})
 
 
 @require_POST

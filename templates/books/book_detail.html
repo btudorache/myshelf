@@ -5,44 +5,64 @@
 
 {% block content %}
   <div class="h-30 row row-content align-items-center" id="book-row">
-      <div class="col-sm-12 col-md-3">
-        <img class="mx-auto d-block img-fluid" src="{{ book.cover.url }}">
+    <div class="col-sm-12 col-md-3">
+      <img class="mx-auto d-block img-fluid" src="{{ book.cover.url }}">
+    </div>
+    <div class="col-sm-12 col-md-8">
+      <div class="card mb-4">
+        <div class="card-body h-80">
+          <h5 class="card-title">Title: {{ book.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><a href="{% url 'book_list_by_author' book.author.id %}">{% if book.author.first_name %}{{ book.author.first_name }}{% endif %} {{ book.author.last_name }}</a></h6>            <p class="card-text">{{ book.description }}</p>
+
+          {% if user.is_authenticated  %}
+            {% if rating %}
+              <p><strong>Your rating for this book: {{ rating.rate }}/5</strong></p>
+            {% else %}
+              <p><strong>You haven't rated this book</strong></p>
+            {% endif %}
+
+            <form action="{% url 'book_rate' book.id %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  {{ book_rate_form.rate|as_crispy_field }}
+                  <button type="submit" class="btn btn-success">Rate book</button>
+                </div>
+                <div class="col-12 col-sm-4">
+
+                </div>
+                <div class="col-12 col-sm-4">
+
+                </div>
+              </div>
+
+            </form>
+          {% endif %}
+
+        </div>
       </div>
-      <div class="col-sm-12 col-md-8">
+    </div>
+  </div>
+
+  <div class="h-30 row align-items-center">
+    <div class="col-12">
+      <h2 id="reviews_header" >Reviews for {{ book.title }}:</h2>
+    </div>
+
+    {% for review in reviews %}
+      <div class="col-12">
         <div class="card mb-4">
           <div class="card-body h-80">
-            <h5 class="card-title">Title: {{ book.title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted"><a href="{% url 'book_list_by_author' book.author.id %}">{% if book.author.first_name %}{{ book.author.first_name }}{% endif %} {{ book.author.last_name }}</a></h6>            <p class="card-text">{{ book.description }}</p>
-
-            {% if user.is_authenticated  %}
-              {% if rating %}
-                <p><strong>Your rating for this book: {{ rating.rate }}/5</strong></p>
-              {% else %}
-                <p><strong>You haven't rated this book</strong></p>
-              {% endif %}
-
-              <form action="{% url 'book_rate' book.id %}" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="row">
-                  <div class="col-12 col-sm-4">
-                    {{ book_rate_form.rate|as_crispy_field }}
-                    <button type="submit" class="btn btn-success">Rate book</button>
-                  </div>
-                  <div class="col-12 col-sm-4">
-
-                  </div>
-                  <div class="col-12 col-sm-4">
-
-                  </div>
-                </div>
-
-              </form>
-            {% endif %}
+            <h5 class="card-title"><a href="{% url 'social_user_detail' review.reviewer.id %}">{{ review.reviewer.get_full_name }}</a> - {{ review.datetime }}</h5>
+            <p>{{ review.text }}</p>
 
           </div>
         </div>
       </div>
-    </div>
+    {% endfor %}
+
+  </div>
+
 {% endblock %}
 
 {% block domready %}

@@ -16,3 +16,8 @@
 #book_query {
     max-width: 100%;
 }
+
+#reviews_header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
