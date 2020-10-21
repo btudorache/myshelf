@@ -109,3 +109,12 @@ class BookReview(models.Model):
 
     class Meta:
         ordering = ('-datetime',)
+
+    @staticmethod
+    def get_book_review(user, book):
+        try:
+            review = BookReview.objects.get(reviewer=user, book_reviewed=book)
+        except BookReview.DoesNotExist:
+            review = None
+
+        return review

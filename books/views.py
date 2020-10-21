@@ -10,13 +10,12 @@ from .models import (
     BookRating,
     BookReview,
 )
-from .forms import BookRateForm, SearchForm
+from .forms import BookRateForm, SearchForm, BookReviewForm
 
 
 @login_required
 def book_search_list(request, genre_id=None, author_id=None):
     search_form = SearchForm()
-    genres = Genre.objects.all()
     if genre_id:
         books = Book.objects.filter(genre__id=genre_id)
     # Form variable 'query' is given to the request dictionary if the form on the website is submitted
@@ -33,9 +32,9 @@ def book_search_list(request, genre_id=None, author_id=None):
                 books = Book.objects.filter(Book.create_search_query(search_object.split()))
     else:
         books = Book.objects.all()
+    genres = Genre.objects.all()
 
-
-    paginator = Paginator(books, 1)
+    paginator = Paginator(books, 10)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -51,9 +50,10 @@ def book_detail(request, book_id):
     book = get_object_or_404(Book, id=book_id)
     book_rate_form = BookRateForm()
     rating = BookRating.get_book_rating(request.user, book)
+    review = BookReview.get_book_review(request.user, book)
     reviews = BookReview.objects.filter(book_reviewed=book)
-    paginator = Paginator(reviews, 8)
 
+    paginator = Paginator(reviews, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -61,6 +61,7 @@ def book_detail(request, book_id):
                                                       'section': 'search',
                                                       'book_rate_form': book_rate_form,
                                                       'rating': rating,
+                                                      'review': review,
                                                       'page_obj': page_obj})
 
 
@@ -104,3 +105,41 @@ def book_rate(request, book_id):
 
         messages.success(request, 'New rating added successfully!')
     return redirect(book)
+
+
+@login_required
+def book_create_review(request, book_title):
+    if request.method == 'POST':
+        book_review_form = BookReviewForm(data=request.POST)
+        if book_review_form.is_valid():
+            review = book_review_form.save(commit=False)
+
+            book = Book.objects.get(title=book_title)
+            review.book_reviewed = book
+            review.reviewer = request.user
+            review.save()
+
+            messages.success(request, "Review added successfully!")
+            return redirect(book)
+    else:
+        book_review_form = BookReviewForm()
+        return render(request, 'books/book_create_review.html', {'section': 'search',
+                                                                 'book_review_form': book_review_form})
+
+
+@login_required
+def book_update_review(request, book_title, review_id):
+    review = BookReview.objects.get(id=review_id)
+    if request.method == 'POST':
+        book_review_form = BookReviewForm(data=request.POST, instance=review)
+        if book_review_form.is_valid():
+            book_review_form.save()
+            book = Book.objects.get(title=book_title)
+
+            messages.success(request, "Review updated successfully!")
+            return redirect(book)
+    else:
+        book_review_form = BookReviewForm(instance=review)
+        return render(request, 'books/book_update_review.html', {'section': 'search',
+                                                                 'book_review_form': book_review_form})
+

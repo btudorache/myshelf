@@ -21,22 +21,31 @@
               <p><strong>You haven't rated this book</strong></p>
             {% endif %}
 
-            <form action="{% url 'book_rate' book.id %}" method="post" enctype="multipart/form-data">
-              {% csrf_token %}
-              <div class="row">
-                <div class="col-12 col-sm-4">
+            <div class="row">
+              <div class="col-12 col-sm-4">
+                <form action="{% url 'book_rate' book.id %}" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
                   {{ book_rate_form.rate|as_crispy_field }}
                   <button type="submit" class="btn btn-success">Rate book</button>
-                </div>
-                <div class="col-12 col-sm-4">
-
-                </div>
-                <div class="col-12 col-sm-4">
-
-                </div>
+                </form>
               </div>
-
-            </form>
+              <div class="d-flex align-items-start flex-column col-12 col-sm-4">
+                  <div class="mt-auto p-2">
+                    {% if review %}
+                      <p><strong>Update review:</strong></p>
+                      <a href="{% url 'update_book_review' book.title review.id %}" class="btn btn-primary" role="button" aria-pressed="true">Update review</a>
+                    {% else %}
+                      <p><strong>Write a review:</strong></p>
+                      <a href="{% url 'review_book' book.title %}" class="btn btn-primary" role="button" aria-pressed="true">Write review</a>
+                    {% endif %}
+                  </div>
+              </div>
+              <div class="d-flex align-items-start flex-column col-12 col-sm-4">
+                  <div class="mt-auto p-2">
+                    <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Add to shelf</a>
+                  </div>
+              </div>
+            </div>
           {% endif %}
 
         </div>
