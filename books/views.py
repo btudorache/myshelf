@@ -43,10 +43,7 @@ def book_detail(request, book_id):
     # view for both adding a new rating or updating and old one
     book = get_object_or_404(Book, id=book_id)
     book_rate_form = BookRateForm()
-    try:
-        rating = BookRating.objects.get(rated_by=request.user, book_rated=book)
-    except BookRating.DoesNotExist:
-        rating = None
+    rating = BookRating.get_book_rating(request.user, book)
 
     return render(request, 'books/book_detail.html', {'book': book,
                                                       'section': 'search',

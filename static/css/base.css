@@ -12,3 +12,7 @@
 #search_bar {
     margin-left: 10px;
 }
+
+#book_query {
+    max-width: 100%;
+}

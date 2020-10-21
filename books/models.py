@@ -70,7 +70,8 @@ class Book(models.Model):
         self.average_rating = (self.num_ratings - 1) / self.num_ratings * self.average_rating + value / self.num_ratings
 
     def update_rating_delete(self, value):
-        self.average_rating = (self.average_rating - value / self.num_ratings) * self.num_ratings / (self.num_ratings-1)
+        self.average_rating = (self.average_rating - value / self.num_ratings) * self.num_ratings / (
+                    self.num_ratings - 1)
 
 
 class BookRating(models.Model):
@@ -83,3 +84,12 @@ class BookRating(models.Model):
     book_rated = models.ForeignKey(Book,
                                    related_name='ratings',
                                    on_delete=models.CASCADE)
+
+    @staticmethod
+    def get_book_rating(user, book):
+        try:
+            rating = BookRating.objects.get(rated_by=user, book_rated=book)
+        except BookRating.DoesNotExist:
+            rating = None
+
+        return rating
