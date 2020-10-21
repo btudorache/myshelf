@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-{% block title %}{{ user.get_full_name }}{% endblock %}
+{% block title %}{{ book.title }}{% endblock %}
 
 {% block content %}
   <div class="h-30 row row-content align-items-center" id="book-row">
@@ -62,7 +62,7 @@
       <div class="col-12">
         <div class="card mb-4">
           <div class="card-body h-80">
-            <h5 class="card-title"><a href="{% url 'social_user_detail' review.reviewer.id %}">{{ review.reviewer.get_full_name }}</a> - {{ review.datetime }}</h5>
+            <h5 class="card-title"><a href="{% if request.user.id == review.reviewer.id %}{% url 'user_detail' %}{% else %}{% url 'social_user_detail' review.reviewer.id %}{% endif %}">{{ review.reviewer.get_full_name }}</a> - {{ review.datetime }}</h5>
             <p>{{ review.text }}</p>
 
           </div>
