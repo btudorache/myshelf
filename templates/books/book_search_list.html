@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  {% for book in books %}
+  {% for book in page_obj %}
     <div class="h-30 row row-content align-items-center" id="book-row">
       <div class="col-sm-4 col-md-3">
         <img alt="book-cover" class="mx-auto d-block img-fluid" src="{{ book.cover.url }}">
@@ -51,4 +51,26 @@
       </div>
     </div>
   {% endfor %}
+
+  <nav aria-label="Page navigation example">
+    <UL class="pagination">
+      {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page=1">first</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">previous</a></li>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <li class="page-item"><a class="page-link" href="?page={{ num }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">{{ num }}</a></li>
+            {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2'%}
+                <li class="page-item"><a class="page-link" href="?page={{ num }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+      {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">next</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">last</a></li>
+      {% endif %}
+    </UL>
+  </nav>
 {% endblock %}
