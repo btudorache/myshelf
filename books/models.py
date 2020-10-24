@@ -4,8 +4,6 @@ from django.db import models
 from django.db.models import Q
 from PIL import Image
 
-import datetime
-
 
 class Genre(models.Model):
     genre = models.CharField(max_length=50, unique=True)
