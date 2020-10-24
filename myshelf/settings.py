@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'books.apps.BooksConfig',
     'accounts.apps.AccountsConfig',
     'social.apps.SocialConfig',
+    'shelf.apps.ShelfConfig',
     
     'django.contrib.admin',
     'django.contrib.auth',

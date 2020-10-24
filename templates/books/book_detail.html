@@ -32,10 +32,10 @@
               <div class="d-flex align-items-start flex-column col-12 col-sm-4">
                   <div class="mt-auto p-2">
                     {% if review %}
-                      <p><strong>Update review:</strong></p>
+                      <p><strong>Update review</strong></p>
                       <a href="{% url 'update_book_review' book.title review.id %}" class="btn btn-primary" role="button" aria-pressed="true">Update review</a>
                     {% else %}
-                      <p><strong>Write a review:</strong></p>
+                      <p><strong>Write a review</strong></p>
                       <a href="{% url 'review_book' book.title %}" class="btn btn-primary" role="button" aria-pressed="true">Write review</a>
                     {% endif %}
                   </div>

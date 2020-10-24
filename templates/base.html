@@ -23,8 +23,8 @@
             <li class="nav-item {% if section == "home" %}active{% endif %}">
               <a class="nav-link" href="{% url "home" %}">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Shelf</a>
+            <li class="nav-item {% if section == "shelf" %}active{% endif %}">
+              <a class="nav-link" href="{% url 'shelf_lists' %}">Shelf</a>
             </li>
             <li class="nav-item {% if section == "search" %}active{% endif %}">
               <a class="nav-link" href="{% url 'book_list' %}">Search</a>

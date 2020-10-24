@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('social.urls')),
     path('accounts/', include('accounts.urls')),
     path('books/', include('books.urls')),
+    path('shelf/', include('shelf.urls')),
 ]
 
 if settings.DEBUG:
