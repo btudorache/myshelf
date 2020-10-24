@@ -3,5 +3,28 @@
 {% block title %}Shelf{% endblock %}
 
 {% block content %}
-  <h1>Welcome to shelf!</h1>
+  {% for shelf in shelf_rows %}
+    <div class="h-30 row row-content align-items-center">
+      <div class="col">
+        <div class="card mb-4">
+          <div class="card-body h-80">
+            <h5 class="card-title">{{ shelf.name }} - {{ shelf.num_items }} Books</h5>
+
+            <div class="row">
+              <div class="col-12 col-sm-4">
+                <a href="#" class="btn btn-primary btn-lg active" role="button">See Shelf Row</a>
+              </div>
+              <div class="col-12 col-sm-4">
+
+              </div>
+              <div class="col-12 col-sm-4">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  {% endfor %}
 {% endblock %}

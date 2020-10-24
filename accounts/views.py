@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 from .models import Profile
+from shelf.models import Shelf, ShelfRow
 
 from .forms import (
     UserRegistrationForm,
@@ -35,6 +36,9 @@ def register(request):
 
             # Create profile for the new user
             Profile.objects.create(user=new_user)
+
+            # Add initial shelf + shelf rows
+            Shelf.add_new_user_shelf(new_user)
             return render(request, 'accounts/register_done.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
