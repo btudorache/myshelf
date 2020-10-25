@@ -14,4 +14,5 @@ class ShelfRowAdmin(admin.ModelAdmin):
 
 @admin.register(ShelfItem)
 class ShelfItemAdmin(admin.ModelAdmin):
-    list_display = ['datetime', 'shelfRow', 'book']
+    list_display = ['datetime', 'shelf_row', 'book', ]
+

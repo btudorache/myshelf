@@ -5,7 +5,7 @@ from PIL import Image
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     location = models.CharField(max_length=50, blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True)
     photo = models.ImageField(default='default_profile.jpg', upload_to='profile_covers/')
@@ -14,7 +14,7 @@ class Profile(models.Model):
         return f'Profile for user {self.user.username}'
 
     def get_absolute_url(self):
-        return reverse('user_detail', args=[self.user.username])
+        return reverse('user_detail')
 
     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)

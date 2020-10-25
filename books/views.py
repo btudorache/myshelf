@@ -10,7 +10,10 @@ from .models import (
     BookRating,
     BookReview,
 )
+from shelf.models import ShelfItem, Shelf
+
 from .forms import BookRateForm, SearchForm, BookReviewForm
+from shelf.forms import ShelfItemForm
 
 
 @login_required
@@ -49,6 +52,8 @@ def book_detail(request, book_id):
     # view for both adding a new rating or updating and old one
     book = get_object_or_404(Book, id=book_id)
     book_rate_form = BookRateForm()
+    shelf_item_form = ShelfItemForm(user=request.user)
+    shelf_item = ShelfItem.get_shelf_item(request.user, book)
     rating = BookRating.get_book_rating(request.user, book)
     review = BookReview.get_book_review(request.user, book)
     reviews = BookReview.objects.filter(book_reviewed=book)
@@ -58,8 +63,10 @@ def book_detail(request, book_id):
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'books/book_detail.html', {'book': book,
+                                                      'shelf_item':shelf_item,
                                                       'section': 'search',
                                                       'book_rate_form': book_rate_form,
+                                                      'shelf_item_form': shelf_item_form,
                                                       'rating': rating,
                                                       'review': review,
                                                       'page_obj': page_obj})

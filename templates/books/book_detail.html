@@ -14,11 +14,22 @@
           <h5 class="card-title">Title: {{ book.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted"><a href="{% url 'book_list_by_author' book.author.id %}">{% if book.author.first_name %}{{ book.author.first_name }}{% endif %} {{ book.author.last_name }}</a></h6>            <p class="card-text">{{ book.description }}</p>
 
-          {% if user.is_authenticated  %}
             {% if rating %}
               <p><strong>Your rating for this book: {{ rating.rate }}/5</strong></p>
             {% else %}
               <p><strong>You haven't rated this book</strong></p>
+            {% endif %}
+
+            {% if review %}
+              <p><strong>You have written a review for this books</strong></p>
+            {% else %}
+              <p><strong>You have not written a review for this books</strong></p>
+            {% endif %}
+
+            {% if shelf_item %}
+              <p><strong>You have added this book to shelf - {{ shelf_item.shelf_row.name }}</strong></p>
+            {% else %}
+              <p><strong>This book is not added to your shelf</strong></p>
             {% endif %}
 
             <div class="row">
@@ -30,23 +41,32 @@
                 </form>
               </div>
               <div class="d-flex align-items-start flex-column col-12 col-sm-4">
-                  <div class="mt-auto p-2">
-                    {% if review %}
-                      <p><strong>Update review</strong></p>
-                      <a href="{% url 'update_book_review' book.title review.id %}" class="btn btn-primary" role="button" aria-pressed="true">Update review</a>
-                    {% else %}
-                      <p><strong>Write a review</strong></p>
-                      <a href="{% url 'review_book' book.title %}" class="btn btn-primary" role="button" aria-pressed="true">Write review</a>
-                    {% endif %}
-                  </div>
+                <div class="mt-auto p-2">
+                  {% if review %}
+                    <p><strong>Update review</strong></p>
+                    <a href="{% url 'update_book_review' book.title review.id %}" class="btn btn-primary" role="button" aria-pressed="true">Update review</a>
+                  {% else %}
+                    <p><strong>Write a review</strong></p>
+                    <a href="{% url 'review_book' book.title %}" class="btn btn-primary" role="button" aria-pressed="true">Write review</a>
+                  {% endif %}
+                </div>
               </div>
               <div class="d-flex align-items-start flex-column col-12 col-sm-4">
-                  <div class="mt-auto p-2">
-                    <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Add to shelf</a>
-                  </div>
+                {% if shelf_item %}
+                  <form action="{% url 'update_shelf_item' book.id shelf_item.id %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ shelf_item_form.shelf_row|as_crispy_field }}
+                    <button type="submit" class="btn btn-success">Update Item</button>
+                  </form>
+                {% else %}
+                  <form action="{% url 'add_shelf_item' book.id %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ shelf_item_form.shelf_row|as_crispy_field }}
+                    <button type="submit" class="btn btn-success">Add Item</button>
+                  </form>
+                {% endif %}
               </div>
             </div>
-          {% endif %}
 
         </div>
       </div>
