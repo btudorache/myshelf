@@ -4,13 +4,13 @@
 {% block title %}List{% endblock %}
 
 {% block content %}
-  {% if row_items %}
+  {% if page_obj %}
     <h2>Books in Row - {{ row.name }}</h2>
   {% else %}
     <h2>There are no books in Row - {{ row.name }}</h2>
   {% endif %}
 
-  {% for item in row_items %}
+  {% for item in page_obj %}
     <div class="h-30 row row-content align-items-center" id="book-row">
       <div class="col-sm-4 col-md-3">
         <img alt="book-cover" class="mx-auto d-block img-fluid" src="{{ item.book.cover.url }}">
@@ -18,20 +18,15 @@
       <div class="col-sm-8 col-md-8">
         <div class="card mb-4">
           <div class="card-body h-80">
-            <h5 class="card-title">{{ item.book.title }}</h5>
+            <h5 class="card-title">{{ item.book.title }} </h5>
             <h6 class="card-subtitle mb-2 text-muted"><a href="{% url 'book_list_by_author' item.book.author.id %}">{% if item.book.author.first_name %}{{ item.book.author.first_name }}{% endif %} {{ item.book.author.last_name }}</a></h6>
             <p class="card-text">Genres: {% for genre in item.book.genre.all %}<a href="{%  url 'book_list_by_genre' genre.id %}"> {{ genre.genre }} </a>{% endfor %}</p>
             <p><strong>Average rating: {{ item.book.average_rating|floatformat:2 }}/5 out of {{ item.book.num_ratings }} votes</strong></p>
 
             <div class="row">
-              <div class="col-12 col-sm-4">
-                <a href="{% url 'book_detail' item.book.id %}" class="btn btn-primary btn-lg active" role="button">See book</a>
-              </div>
-              <div class="col-12 col-sm-4">
-
-              </div>
-              <div class="col-12 col-sm-4">
-
+              <div class="col">
+                <a href="{% url 'book_detail' item.book.id %}" class="btn btn-primary" role="button">See book</a>
+                <a href="{% url 'delete_shelf_item' item.id section %}" class="btn btn-danger" role="button" aria-pressed="true">Delete item</a>
               </div>
             </div>
           </div>
@@ -40,5 +35,29 @@
       </div>
     </div>
   {% endfor %}
+
+  {% if page_obj %}
+    <nav id="shelf_item_pagination" aria-label="Page navigation example">
+      <UL class="pagination">
+        {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page=1">first</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+              {% if page_obj.number == num %}
+                  <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+              {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2'%}
+                  <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+              {% endif %}
+          {% endfor %}
+
+        {% if page_obj.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a></li>
+        {% endif %}
+      </UL>
+    </nav>
+  {% endif %}
 
 {% endblock %}

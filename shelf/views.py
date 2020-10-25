@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib import messages
@@ -15,13 +16,17 @@ def shelf_lists(request):
     return render(request, 'shelf/shelf_lists.html', {'section': 'shelf',
                                                       'shelf_rows': shelf_rows})
 
+
 def shelf_row_items(request, shelf_row_id):
     row = ShelfRow.objects.get(id=shelf_row_id)
     row_items = row.get_items()
+
+    paginator = Paginator(row_items, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     return render(request, 'shelf/shelf_row_items.html', {'section': 'shelf',
                                                           'row': row,
-                                                          'row_items': row_items})
-
+                                                          'page_obj': page_obj})
 
 
 @login_required
@@ -65,4 +70,19 @@ def update_shelf_item(request, book_id, old_shelf_item_id):
 
         messages.success(request, "Book row updated successfully!")
         return redirect(book)
+
+
+@login_required
+def delete_shelf_item(request, shelf_item_id, section):
+    shelf_item = ShelfItem.objects.get(id=shelf_item_id)
+    shelf_item.shelf_row.shelf_item_delete()
+    if section == 'search':
+        book = Book.objects.get(id=shelf_item.book.id)
+        shelf_item.delete()
+        return redirect(book)
+    elif section == 'shelf':
+        shelf_row = ShelfRow.objects.get(id=shelf_item.shelf_row.id)
+        shelf_item.delete()
+        return redirect(shelf_row)
+
 

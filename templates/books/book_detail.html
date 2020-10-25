@@ -27,7 +27,7 @@
             {% endif %}
 
             {% if shelf_item %}
-              <p><strong>You have added this book to shelf - {{ shelf_item.shelf_row.name }}</strong></p>
+              <p><strong>You have added this book to shelf - {{ shelf_item.shelf_row.name }}</strong> <a href="{% url 'delete_shelf_item' shelf_item.id section %}">(remove from shelf)</a></p>
             {% else %}
               <p><strong>This book is not added to your shelf</strong></p>
             {% endif %}

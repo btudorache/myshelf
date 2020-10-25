@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.urls import reverse
 from django.db import models
 
 from books.models import Book
@@ -32,6 +33,9 @@ class ShelfRow(models.Model):
                               related_name='row',
                               on_delete=models.CASCADE)
     num_items = models.IntegerField(default=0)
+
+    def get_absolute_url(self):
+        return reverse('shelf_row_items', args=[self.id])
 
     def get_items(self):
         return ShelfItem.objects.filter(shelf_row=self)
