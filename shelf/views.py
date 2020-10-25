@@ -15,6 +15,14 @@ def shelf_lists(request):
     return render(request, 'shelf/shelf_lists.html', {'section': 'shelf',
                                                       'shelf_rows': shelf_rows})
 
+def shelf_row_items(request, shelf_row_id):
+    row = ShelfRow.objects.get(id=shelf_row_id)
+    row_items = row.get_items()
+    return render(request, 'shelf/shelf_row_items.html', {'section': 'shelf',
+                                                          'row': row,
+                                                          'row_items': row_items})
+
+
 
 @login_required
 @require_POST

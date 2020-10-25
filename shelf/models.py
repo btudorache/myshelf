@@ -33,6 +33,9 @@ class ShelfRow(models.Model):
                               on_delete=models.CASCADE)
     num_items = models.IntegerField(default=0)
 
+    def get_items(self):
+        return ShelfItem.objects.filter(shelf_row=self)
+
     def shelf_item_add(self):
         self.num_items += 1
         self.save()

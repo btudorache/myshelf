@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}List{% endblock %}
+
+{% block content %}
+  {% if row_items %}
+    <h2>Books in Row - {{ row.name }}</h2>
+  {% else %}
+    <h2>There are no books in Row - {{ row.name }}</h2>
+  {% endif %}
+
+  {% for item in row_items %}
+    <div class="h-30 row row-content align-items-center" id="book-row">
+      <div class="col-sm-4 col-md-3">
+        <img alt="book-cover" class="mx-auto d-block img-fluid" src="{{ item.book.cover.url }}">
+      </div>
+      <div class="col-sm-8 col-md-8">
+        <div class="card mb-4">
+          <div class="card-body h-80">
+            <h5 class="card-title">{{ item.book.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted"><a href="{% url 'book_list_by_author' item.book.author.id %}">{% if item.book.author.first_name %}{{ item.book.author.first_name }}{% endif %} {{ item.book.author.last_name }}</a></h6>
+            <p class="card-text">Genres: {% for genre in item.book.genre.all %}<a href="{%  url 'book_list_by_genre' genre.id %}"> {{ genre.genre }} </a>{% endfor %}</p>
+            <p><strong>Average rating: {{ item.book.average_rating|floatformat:2 }}/5 out of {{ item.book.num_ratings }} votes</strong></p>
+
+            <div class="row">
+              <div class="col-12 col-sm-4">
+                <a href="{% url 'book_detail' item.book.id %}" class="btn btn-primary btn-lg active" role="button">See book</a>
+              </div>
+              <div class="col-12 col-sm-4">
+
+              </div>
+              <div class="col-12 col-sm-4">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}
