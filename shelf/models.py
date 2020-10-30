@@ -6,12 +6,15 @@ from books.models import Book
 
 
 class Shelf(models.Model):
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL,
-                              related_name='user_shelf',
-                              on_delete=models.CASCADE)
+    owner = models.OneToOneField(settings.AUTH_USER_MODEL,
+                                 related_name='user_shelf',
+                                 on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.owner.username}'s shelf"
+
+    def get_absolute_url(self):
+        return reverse('shelf_lists')
 
     def get_shelves(self):
         return ShelfRow.objects.filter(shelf=self)
@@ -33,6 +36,7 @@ class ShelfRow(models.Model):
                               related_name='row',
                               on_delete=models.CASCADE)
     num_items = models.IntegerField(default=0)
+    is_default = models.BooleanField(default=False)
 
     def get_absolute_url(self):
         return reverse('shelf_row_items', args=[self.id])

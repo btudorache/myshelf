@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import ShelfItem, Shelf
+from .models import ShelfItem, ShelfRow, Shelf
 
 
 class ShelfItemForm(forms.ModelForm):
@@ -13,3 +13,8 @@ class ShelfItemForm(forms.ModelForm):
         model = ShelfItem
         fields = ('shelf_row',)
 
+
+class ShelfRowForm(forms.ModelForm):
+    class Meta:
+        model = ShelfRow
+        fields = ('name',)

@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from books.models import Book
 from .models import Shelf, ShelfRow, ShelfItem
 
-from .forms import ShelfItemForm
+from .forms import ShelfItemForm, ShelfRowForm
 
 
 @login_required
@@ -17,6 +17,7 @@ def shelf_lists(request):
                                                       'shelf_rows': shelf_rows})
 
 
+@login_required
 def shelf_row_items(request, shelf_row_id):
     row = ShelfRow.objects.get(id=shelf_row_id)
     row_items = row.get_items()
@@ -86,3 +87,19 @@ def delete_shelf_item(request, shelf_item_id, section):
         return redirect(shelf_row)
 
 
+@login_required
+def add_shelf(request):
+    if request.method == 'POST':
+        shelf_row_form = ShelfRowForm(data=request.POST)
+        if shelf_row_form.is_valid():
+            shelf_row = shelf_row_form.save(commit=False)
+            shelf_row.owner = request.user
+            shelf_row.shelf = request.user.user_shelf
+            shelf_row.save()
+
+            messages.success(request, "New Shelf Row Added Successfully!")
+            return redirect(request.user.user_shelf)
+    else:
+        shelf_row_form = ShelfRowForm()
+        return render(request, 'shelf/shelf_row_add.html', {'section': 'shelf',
+                                                            'shelf_row_form': shelf_row_form})

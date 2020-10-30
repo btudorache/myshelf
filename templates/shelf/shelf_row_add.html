@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Add shelf{% endblock %}
+
+{% block content %}
+  <h2>Add a new shelf</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ shelf_row_form|crispy }}
+    <button type="submit" class="btn btn-success">Add shelf</button>
+  </form>
+{% endblock %}
