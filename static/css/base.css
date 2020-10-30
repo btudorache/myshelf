@@ -33,3 +33,7 @@
 #add_new_shelf_row_button {
     margin-top: 20px;
 }
+
+#delete_shelf_row_button {
+    margin-left: 5px;
+}

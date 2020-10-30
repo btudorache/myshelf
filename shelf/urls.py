@@ -10,4 +10,5 @@ urlpatterns = [
     path('add/shelf_row/', views.add_shelf, name='add_shelf_row'),
     path('update/<int:book_id>/<int:old_shelf_item_id>/', views.update_shelf_item, name='update_shelf_item'),
     path('delete/<int:shelf_item_id>/<section>', views.delete_shelf_item, name='delete_shelf_item'),
+    path('delete/<int:shelf_row_id>/', views.delete_shelf_row, name='delete_shelf_row'),
 ]

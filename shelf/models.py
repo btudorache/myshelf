@@ -31,7 +31,7 @@ class ShelfRow(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL,
                               related_name='user_shelf_row',
                               on_delete=models.CASCADE)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=50)
     shelf = models.ForeignKey(Shelf,
                               related_name='row',
                               on_delete=models.CASCADE)
