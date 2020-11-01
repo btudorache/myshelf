@@ -13,6 +13,20 @@
           <p>Location: {{ user.profile.location }}</p>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          {% with total_followers=user.followers.count %}
+            <span class="count">
+              <strong><span class="total">{{ total_followers }}</span> follower{{ total_followers|pluralize }}</strong>
+            </span>
+            {% if request.user not in user.followers.all %}
+              <a href="{% url 'user_follow' user.id %}" class="btn btn-success btn-sm">Follow</a>
+            {% else %}
+              <a href="{% url 'user_unfollow' user.id contact.id %}" class="btn btn-danger btn-sm">Unfollow</a>
+            {% endif %}
+          {% endwith %}
+        </div>
+      </div>
     </div>
   </div>
 
@@ -32,3 +46,4 @@
     </div>
   </div>
 {% endblock %}
+
