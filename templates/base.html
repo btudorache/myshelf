@@ -21,7 +21,7 @@
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item {% if section == "home" %}active{% endif %}">
-              <a class="nav-link" href="{% url "home" %}">Home</a>
+              <a class="nav-link" href="{% if user.is_authenticated %}{% url "dashboard" %}{% else %}{% url "home" %}{% endif %}">Home</a>
             </li>
             <li class="nav-item {% if section == "shelf" %}active{% endif %}">
               <a class="nav-link" href="{% url 'shelf_lists' %}">Shelf</a>

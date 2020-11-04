@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 
+from actions.utils import create_action
+
 from .models import (
     Book,
     Genre,
@@ -110,6 +112,9 @@ def book_rate(request, book_id):
         book.add_value_to_rating(rating.rate)
         book.save()
 
+        # Create new book_rate action
+        create_action(request.user, 'rated', book)
+
         messages.success(request, 'New rating added successfully!')
     return redirect(book)
 
@@ -125,6 +130,9 @@ def book_create_review(request, book_title):
             review.book_reviewed = book
             review.reviewer = request.user
             review.save()
+
+            # Create new review
+            create_action(request.user, 'reviewed book', review)
 
             messages.success(request, "Review added successfully!")
             return redirect(book)
