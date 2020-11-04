@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'social.apps.SocialConfig',
     'shelf.apps.ShelfConfig',
+    'actions.apps.ActionsConfig',
     
     'django.contrib.admin',
     'django.contrib.auth',
