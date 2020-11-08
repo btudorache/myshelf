@@ -32,7 +32,7 @@ def book_search_list(request, genre_id=None, author_id=None):
             search_object = search_form.cleaned_data['query']
             # Search object must have more than 1 letter
             if len(search_object) == 1:
-                books = None
+                books = []
             else:
                 books = Book.objects.filter(Book.create_search_query(search_object.split()))
     else:

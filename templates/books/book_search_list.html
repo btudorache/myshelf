@@ -52,25 +52,29 @@
     </div>
   {% endfor %}
 
-  <nav id="book_list_pagination" aria-label="Page navigation example">
-    <UL class="pagination">
-      {% if page_obj.has_previous %}
-        <li class="page-item"><a class="page-link" href="?page=1">first</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">previous</a></li>
-      {% endif %}
+  {% if page_obj %}
+    <nav id="book_list_pagination" aria-label="Page navigation example">
+      <UL class="pagination">
+        {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page=1">first</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">previous</a></li>
+        {% endif %}
 
-      {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-                <li class="page-item"><a class="page-link" href="?page={{ num }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">{{ num }}</a></li>
-            {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2'%}
-                <li class="page-item"><a class="page-link" href="?page={{ num }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">{{ num }}</a></li>
-            {% endif %}
-        {% endfor %}
+        {% for num in page_obj.paginator.page_range %}
+              {% if page_obj.number == num %}
+                  <li class="page-item"><a class="page-link" href="?page={{ num }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">{{ num }}</a></li>
+              {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2'%}
+                  <li class="page-item"><a class="page-link" href="?page={{ num }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">{{ num }}</a></li>
+              {% endif %}
+          {% endfor %}
 
-      {% if page_obj.has_next %}
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">next</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">last</a></li>
-      {% endif %}
-    </UL>
-  </nav>
+        {% if page_obj.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">next</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}">last</a></li>
+        {% endif %}
+      </UL>
+    </nav>
+  {% else %}
+    <p>No books have been found</p>
+  {% endif %}
 {% endblock %}
