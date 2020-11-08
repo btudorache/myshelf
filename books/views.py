@@ -76,33 +76,11 @@ def book_detail(request, book_id):
 
 @require_POST
 @login_required
-def book_rate(request, book_id):
+def book_rate_create(request, book_id):
     book = get_object_or_404(Book, id=book_id)
+    book_rate_form = BookRateForm(data=request.POST)
 
-    try:
-        rating = BookRating.objects.get(rated_by=request.user, book_rated=book)
-        book_rate_form = BookRateForm(instance=rating, data=request.POST)
-        prev_rating = rating.rate
-    except BookRating.DoesNotExist:
-        book_rate_form = BookRateForm(data=request.POST)
-        rating = None
-
-    # Update the rating value
-    if book_rate_form.is_valid() and rating:
-        # remove old rating from the average
-        if book.num_ratings == 1:
-            book.average_rating = 0
-        else:
-            book.update_rating_delete(prev_rating)
-
-        rating = book_rate_form.save()
-        # then add the new rating to average
-        book.update_rating_add(rating.rate)
-        book.save()
-
-        messages.success(request, 'Rating updated successfully!')
-    # Create new rating value
-    elif book_rate_form.is_valid():
+    if book_rate_form.is_valid():
         rating = book_rate_form.save(commit=False)
         rating.rated_by = request.user
         rating.book_rated = book
@@ -116,6 +94,29 @@ def book_rate(request, book_id):
         create_action(request.user, 'rated', book)
 
         messages.success(request, 'New rating added successfully!')
+    return redirect(book)
+
+
+@require_POST
+@login_required
+def book_rate_update(request, book_id, rating_id):
+    rating = BookRating.objects.get(id=rating_id)
+    book = Book.objects.get(id=book_id)
+    prev_rating = rating.rate
+    book_rate_form = BookRateForm(instance=rating, data=request.POST)
+
+    if book_rate_form.is_valid():
+        if book.num_ratings == 1:
+            book.average_rating = 0
+        else:
+            book.update_rating_delete(prev_rating)
+
+        rating = book_rate_form.save()
+        # then add the new rating to average
+        book.update_rating_add(rating.rate)
+        book.save()
+
+        messages.success(request, 'Rating updated successfully!')
     return redirect(book)
 
 

@@ -34,11 +34,15 @@
 
             <div class="row">
               <div class="col-12 col-sm-4">
-                <form action="{% url 'book_rate' book.id %}" method="post" enctype="multipart/form-data">
-                  {% csrf_token %}
-                  {{ book_rate_form.rate|as_crispy_field }}
-                  <button type="submit" class="btn btn-success">Rate book</button>
-                </form>
+                {% if rating %}
+                  <form action="{% url 'book_rate_update' book.id rating.id %}" method="post" enctype="multipart/form-data">
+                {% else %}
+                  <form action="{% url 'book_rate_create' book.id %}" method="post" enctype="multipart/form-data">
+                {% endif %}
+                    {% csrf_token %}
+                    {{ book_rate_form.rate|as_crispy_field }}
+                    <button type="submit" class="btn btn-success">{% if rating %}Update rating{% else %}Rate book{% endif %}</button>
+                  </form>
               </div>
               <div class="d-flex align-items-start flex-column col-12 col-sm-4">
                 <div class="mt-auto p-2">
