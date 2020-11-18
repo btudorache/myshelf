@@ -85,6 +85,12 @@ class BookRating(models.Model):
                                    related_name='ratings',
                                    on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'Review for {self.book_rated.title} by {self.rated_by.name}'
+
+    def get_absolute_url(self):
+        return reverse('review_detail', args=[self.id])
+
     @staticmethod
     def get_book_rating(user, book):
         try:

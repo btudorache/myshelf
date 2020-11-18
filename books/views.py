@@ -106,6 +106,7 @@ def book_rate_update(request, book_id, rating_id):
     book_rate_form = BookRateForm(instance=rating, data=request.POST)
 
     if book_rate_form.is_valid():
+        # delete previous rating
         if book.num_ratings == 1:
             book.average_rating = 0
         else:
@@ -158,4 +159,10 @@ def book_update_review(request, book_title, review_id):
         book_review_form = BookReviewForm(instance=review)
         return render(request, 'books/book_update_review.html', {'section': 'search',
                                                                  'book_review_form': book_review_form})
+
+
+def book_review_detail(request, review_id):
+    review = BookReview.objects.get(id=review_id)
+    return render(request, 'books/book_review_detail.html', {'section': 'search',
+                                                             'review': review})
 

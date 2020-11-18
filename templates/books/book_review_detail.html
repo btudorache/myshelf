@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Review - {{ book.title }}{% endblock %}
+
+{% block content %}
+  <div class="h-30 row align-items-center">
+    <h2>Review for {{ review.book_reviewed.title }}</h2>
+    <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-body h-80">
+            <h5 class="card-title"><a href="{% if request.user.id == review.reviewer.id %}{% url 'user_detail' %}{% else %}{% url 'social_user_detail' review.reviewer.id %}{% endif %}">{{ review.reviewer.get_full_name }}</a> - {{ review.datetime }}</h5>
+            <p>{{ review.text }}</p>
+
+          </div>
+        </div>
+      </div>
+  </div>
+{% endblock %}
