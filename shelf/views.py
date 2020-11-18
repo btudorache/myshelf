@@ -23,12 +23,14 @@ def shelf_lists(request, user_id):
 @login_required
 def shelf_row_items(request, shelf_row_id):
     row = ShelfRow.objects.get(id=shelf_row_id)
+    shelf = Shelf.objects.get(id=row.shelf_id)
     row_items = row.get_items()
 
     paginator = Paginator(row_items, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'shelf/shelf_row_items.html', {'section': 'shelf',
+                                                          'shelf': shelf,
                                                           'row': row,
                                                           'page_obj': page_obj})
 

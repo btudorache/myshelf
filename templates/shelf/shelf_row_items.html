@@ -4,6 +4,11 @@
 {% block title %}List{% endblock %}
 
 {% block content %}
+  {% if shelf.owner == request.user %}
+    <h3>Your shelves</h3>
+  {% else %}
+    <h3>{{ shelf.owner.first_name }}'s shelves</h3>
+  {% endif %}
   {% if page_obj %}
     <h2>Books in Row - {{ row.name }}</h2>
   {% else %}
