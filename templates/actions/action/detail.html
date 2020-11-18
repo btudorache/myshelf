@@ -4,7 +4,7 @@
         <p>
           <span class="date">{{ action.created|timesince }} ago</span>
           <br />
-          <a href="{% url 'social_user_detail' user.id %}">
+          <a href="{% url 'user_detail' user.id %}">
             {{ user.first_name }}
           </a>
           {{ action.verb }}

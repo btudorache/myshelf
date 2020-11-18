@@ -86,7 +86,7 @@
       <div class="col-12">
         <div class="card mb-4">
           <div class="card-body h-80">
-            <h5 class="card-title"><a href="{% if request.user.id == review.reviewer.id %}{% url 'user_detail' %}{% else %}{% url 'social_user_detail' review.reviewer.id %}{% endif %}">{{ review.reviewer.get_full_name }}</a> - {{ review.datetime }}</h5>
+            <h5 class="card-title"><a href="{% if request.user.id == review.reviewer.id %}{% url 'user_profile' %}{% else %}{% url 'user_detail' review.reviewer.id %}{% endif %}">{{ review.reviewer.get_full_name }}</a> - {{ review.datetime }}</h5>
             <p><a href="{% url 'review_detail' review.id %}">(See review)</a></p>
             <p>{{ review.text }}</p>
 
