@@ -4,6 +4,7 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.shortcuts import render, redirect
 
+from actions.utils import create_action
 from books.models import Book
 from .models import Shelf, ShelfRow, ShelfItem
 
@@ -42,6 +43,9 @@ def add_shelf_item(request, book_id):
         shelf_item.book = book
         shelf_item.owner = request.user
         shelf_item.save()
+
+        # Create new book_rate action
+        create_action(request.user, 'added book to shelf', shelf_item_form.cleaned_data['shelf_row'])
 
         messages.success(request, "Book added to shelf successfully!")
         return redirect(book)
