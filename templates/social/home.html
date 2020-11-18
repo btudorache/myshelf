@@ -3,5 +3,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-  <h1>Welcome to the homepage!</h1>
+  <div class="jumbotron">
+  <h1 class="display-4">Welcome to MyShelf!</h1>
+  <p class="lead">A community for readers and book-lovers.</p>
+  <hr class="my-4">
+  <p>Join us now!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Register</a>
+  </p>
+</div>
 {% endblock %}
