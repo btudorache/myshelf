@@ -23,12 +23,14 @@
             <p class="card-text">Genres: {% for genre in item.book.genre.all %}<a href="{%  url 'book_list_by_genre' genre.id %}"> {{ genre.genre }} </a>{% endfor %}</p>
             <p><strong>Average rating: {{ item.book.average_rating|floatformat:2 }}/5 out of {{ item.book.num_ratings }} votes</strong></p>
 
-            <div class="row">
-              <div class="col">
-                <a href="{% url 'book_detail' item.book.id %}" class="btn btn-primary" role="button">See book</a>
-                <a href="{% url 'delete_shelf_item' item.id section %}" class="btn btn-danger" role="button" aria-pressed="true">Delete item</a>
+            {% if row.owner == request.user %}
+              <div class="row">
+                <div class="col">
+                  <a href="{% url 'book_detail' item.book.id %}" class="btn btn-primary" role="button">See book</a>
+                  <a href="{% url 'delete_shelf_item' item.id section %}" class="btn btn-danger" role="button" aria-pressed="true">Delete item</a>
+                </div>
               </div>
-            </div>
+            {% endif %}
           </div>
         </div>
 

@@ -12,9 +12,11 @@ from .forms import ShelfItemForm, ShelfRowForm
 
 
 @login_required
-def shelf_lists(request):
-    shelf_rows = Shelf.objects.get(owner=request.user).get_shelves()
+def shelf_lists(request, user_id):
+    shelf = Shelf.objects.get(id=user_id)
+    shelf_rows = shelf.get_shelves()
     return render(request, 'shelf/shelf_lists.html', {'section': 'shelf',
+                                                      'shelf': shelf,
                                                       'shelf_rows': shelf_rows})
 
 

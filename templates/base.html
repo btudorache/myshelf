@@ -24,7 +24,7 @@
               <a class="nav-link" href="{% if user.is_authenticated %}{% url "dashboard" %}{% else %}{% url "home" %}{% endif %}">Home</a>
             </li>
             <li class="nav-item {% if section == "shelf" %}active{% endif %}">
-              <a class="nav-link" href="{% url 'shelf_lists' %}">Shelf</a>
+              <a class="nav-link" href="{% url 'shelf_lists' request.user.id %}">Shelf</a>
             </li>
             <li class="nav-item {% if section == "search" %}active{% endif %}">
               <a class="nav-link" href="{% url 'book_list' %}">Search</a>
