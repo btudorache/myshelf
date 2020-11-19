@@ -14,7 +14,7 @@ class Profile(models.Model):
         return f'Profile for user {self.user.username}'
 
     def get_absolute_url(self):
-        return reverse('user_detail')
+        return reverse('user_profile')
 
     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)

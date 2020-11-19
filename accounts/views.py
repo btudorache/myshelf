@@ -44,6 +44,7 @@ def register(request):
         user_form = UserRegistrationForm()
         return render(request, 'accounts/register.html', {'user_form': user_form, 'section': 'register'})
 
+
 @login_required
 def user_detail(request):
     user = get_object_or_404(User, username=request.user.username, is_active=True)
