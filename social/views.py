@@ -3,33 +3,45 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
+from .forms import SearchForm
 from .models import Contact
 from actions.models import Action
 from actions.utils import create_action
+from .utils import create_user_search_query
 
 
-def home(request):
-    return render(request, 'social/home.html', {'section': 'home'})
-
-
-@login_required
 def dashboard(request):
-    # Display all actions by default
-    actions = Action.objects.exclude(user=request.user)
-    following_ids = request.user.following.values_list('id', flat=True)
+    if request.user.is_authenticated:
+        # Display all actions by default
+        actions = Action.objects.exclude(user=request.user)
+        following_ids = request.user.following.values_list('id', flat=True)
 
-    if following_ids:
-        # if user is following others, retrieve only their actions
-        actions = actions.filter(user_id__in=following_ids)
-    actions = actions.select_related('user', 'user__profile').prefetch_related('target')[:30]
+        if following_ids:
+            # if user is following others, retrieve only their actions
+            actions = actions.filter(user_id__in=following_ids)
+        actions = actions.select_related('user', 'user__profile').prefetch_related('target')[:30]
 
-    return render(request, 'social/dashboard.html', {'section': 'home',
-                                                     'actions': actions})
+        return render(request, 'social/dashboard.html', {'section': 'home',
+                                                         'actions': actions})
+    else:
+        # Else return homepage
+        return render(request, 'social/home.html', {'section': 'home'})
 
 
 @login_required
 def user_list(request):
-    users = User.objects.exclude(username=request.user.username)
+    if 'query' in request.GET and request.GET['query']:
+        search_form = SearchForm(data=request.GET)
+        if search_form.is_valid():
+            search_object = search_form.cleaned_data['query']
+            # Search object must have more than 1 letter
+            if len(search_object) == 1:
+                users = []
+            else:
+                users = User.objects.filter(create_user_search_query(search_object.split()))
+                users = users.exclude(username=request.user.username)
+    else:
+        users = User.objects.exclude(username=request.user.username)[:20]
     return render(request, 'social/user_list.html', {'section': 'social',
                                                      'users': users,})
 

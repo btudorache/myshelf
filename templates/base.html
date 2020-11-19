@@ -21,7 +21,7 @@
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item {% if section == "home" %}active{% endif %}">
-              <a class="nav-link" href="{% if user.is_authenticated %}{% url "dashboard" %}{% else %}{% url "home" %}{% endif %}">{% if user.is_authenticated %}Dashboard{% else %}Home{% endif %}</a>
+              <a class="nav-link" href="{% url "dashboard" %}">{% if user.is_authenticated %}Dashboard{% else %}Home{% endif %}</a>
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item {% if section == "shelf" %}active{% endif %}">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="mx-auto order-0">
-          <a class="navbar-brand mx-auto" href="{% if user.is_authenticated %}{% url "dashboard" %}{% else %}{% url "home" %}{% endif %}">MyShelf</a>
+          <a class="navbar-brand mx-auto" href="{% url "dashboard" %}">MyShelf</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
           </button>
