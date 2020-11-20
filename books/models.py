@@ -103,7 +103,7 @@ class BookReview(models.Model):
                                  related_name='books_reviewed',
                                  on_delete=models.CASCADE)
     text = models.TextField()
-    datetime = models.DateField(auto_now_add=True)
+    datetime = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'Review for {self.book_reviewed.title} by {self.reviewer.username}'

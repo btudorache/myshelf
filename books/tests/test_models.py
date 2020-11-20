@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 from django.test import TestCase
 # Used for mock test
@@ -6,7 +7,7 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.contrib.auth.models import User
 from myshelf.settings import MEDIA_ROOT
 
-from ..models import Genre, Author, Book, BookRating
+from ..models import Genre, Author, Book, BookRating, BookReview
 
 
 class GenreModelTest(TestCase):
@@ -139,3 +140,52 @@ class BookRatingModelTest(TestCase):
         new_rating = BookRating.get_book_rating(self.user, new_book)
         self.assertFalse(new_rating)
 
+
+class BookReviewModelTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user('test_user', password='testing1234')
+        self.author = Author.objects.create(first_name='Fyodor', last_name='Dostoevsky', description='Best author ever')
+        self.book = Book.objects.create(title="New book", author=self.author)
+        self.review = BookReview.objects.create(book_reviewed=self.book,
+                                                reviewer=self.user,
+                                                text='test review')
+        sleep(0.5)
+
+    def test_create_book_review(self):
+        self.assertEquals(self.review, BookReview.objects.first())
+        self.assertEquals(self.review.text, 'test review')
+
+    def test_book_rating_has_correct_foreign_keys(self):
+        self.assertEquals(self.review.book_reviewed, self.book)
+        self.assertEquals(self.review.reviewer, self.user)
+
+    def test_get_absolute_url(self):
+        self.assertEquals(self.review.get_absolute_url(), f'/books/review/{self.review.id}/')
+
+    def test_1_get_book_rating_method(self):
+        new_review = BookReview.get_book_review(self.user, self.book)
+        self.assertEquals(new_review, self.review)
+
+    def test_2_get_book_rating_method(self):
+        new_book = Book.objects.create(title="book with no review", author=self.author)
+        new_review = BookReview.get_book_review(self.user, new_book)
+        self.assertFalse(new_review)
+
+    # Must sleep between review.create() so datetime ordering can happen correctly
+    def test_book_rating_ordering(self):
+        review1 = BookReview.objects.create(book_reviewed=self.book,
+                                            reviewer=self.user,
+                                            text='test review number 1')
+        sleep(0.5)
+        review2 = BookReview.objects.create(book_reviewed=self.book,
+                                            reviewer=self.user,
+                                            text='test review number 2')
+        sleep(0.5)
+        review3 = BookReview.objects.create(book_reviewed=self.book,
+                                            reviewer=self.user,
+                                            text='test review number 3')
+        sleep(0.5)
+        reviews = BookReview.objects.all()
+        self.assertEquals(reviews[0], review3)
+        self.assertEquals(reviews[1], review2)
+        self.assertEquals(reviews[2], review1)
