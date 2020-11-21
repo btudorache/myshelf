@@ -54,3 +54,39 @@ class LoginPageTest(TestCase):
 
     def test_register_page_category(self):
         self.assertEquals(self.response.context['section'], 'login')
+
+
+class UserDetailTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username='test_user', password='testing1234')
+        self.profile = Profile.objects.create(user=self.user)
+        self.client.login(username='test_user', password='testing1234')
+        self.response = self.client.get('/accounts/profile/')
+
+    def test_user_detail_page_template(self):
+        self.assertTemplateUsed(self.response, 'accounts/user/user_detail.html')
+
+    def test_user_detail_page_gets_correct_user(self):
+        self.assertContains(self.response, self.user.username)
+
+
+class UserUpdateProfileTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username='test_user', password='testing1234')
+        self.profile = Profile.objects.create(user=self.user)
+        self.client.login(username='test_user', password='testing1234')
+
+    def test_get_request_status_code(self):
+        response = self.client.get('/accounts/profile/update/')
+        self.assertEquals(response.status_code, 200)
+
+    def test_get_response_template(self):
+        response = self.client.get('/accounts/profile/update/')
+        self.assertTemplateUsed(response, 'accounts/user/user_update.html')
+
+    def test_correct_redirect_after_post_request(self):
+        response = self.client.post('/accounts/profile/update/', {'first_name': 'Bogdan',
+                                                                  'last_name': 'Tudorache',
+                                                                  'location': 'Focsani',
+                                                                  'date_of_birth': '1999-11-17'})
+        self.assertEquals(response.url, '/accounts/profile/')
