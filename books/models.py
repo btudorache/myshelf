@@ -33,6 +33,9 @@ class Book(models.Model):
     num_ratings = models.IntegerField(default=0)
     average_rating = models.FloatField(default=0)
 
+    class Meta:
+        ordering = ('id',)
+
     def __str__(self):
         return f'{self.title}'
 

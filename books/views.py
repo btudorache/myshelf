@@ -122,13 +122,13 @@ def book_rate_update(request, book_id, rating_id):
 
 
 @login_required
-def book_create_review(request, book_title):
+def book_create_review(request, book_id):
     if request.method == 'POST':
         book_review_form = BookReviewForm(data=request.POST)
         if book_review_form.is_valid():
             review = book_review_form.save(commit=False)
 
-            book = Book.objects.get(title=book_title)
+            book = Book.objects.get(id=book_id)
             review.book_reviewed = book
             review.reviewer = request.user
             review.save()
@@ -145,13 +145,13 @@ def book_create_review(request, book_title):
 
 
 @login_required
-def book_update_review(request, book_title, review_id):
+def book_update_review(request, book_id, review_id):
     review = BookReview.objects.get(id=review_id)
     if request.method == 'POST':
         book_review_form = BookReviewForm(data=request.POST, instance=review)
         if book_review_form.is_valid():
             book_review_form.save()
-            book = Book.objects.get(title=book_title)
+            book = Book.objects.get(id=book_id)
 
             messages.success(request, "Review updated successfully!")
             return redirect(book)
@@ -161,6 +161,7 @@ def book_update_review(request, book_title, review_id):
                                                                  'book_review_form': book_review_form})
 
 
+@login_required
 def book_review_detail(request, review_id):
     review = BookReview.objects.get(id=review_id)
     return render(request, 'books/book_review_detail.html', {'section': 'search',
