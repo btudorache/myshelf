@@ -14,7 +14,7 @@ class Shelf(models.Model):
         return f"{self.owner.username}'s shelf"
 
     def get_absolute_url(self):
-        return reverse('shelf_lists')
+        return reverse('shelf_lists', args=[self.owner.id])
 
     def get_shelves(self):
         return ShelfRow.objects.filter(shelf=self)

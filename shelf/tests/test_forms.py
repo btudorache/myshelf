@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 
-
 from ..forms import ShelfItemForm, ShelfRowForm
 from ..models import Shelf, ShelfRow, ShelfItem
 from books.models import Author, Book
