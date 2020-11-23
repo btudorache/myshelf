@@ -103,6 +103,7 @@ def add_shelf(request):
             shelf_row = shelf_row_form.save(commit=False)
             shelf_row.owner = request.user
             shelf_row.shelf = request.user.user_shelf
+            shelf_row.is_default = True
             shelf_row.save()
 
             messages.success(request, "New Shelf Row Added Successfully!")
@@ -116,6 +117,5 @@ def add_shelf(request):
 @login_required
 def delete_shelf_row(request, shelf_row_id):
     shelf_row = ShelfRow.objects.get(id=shelf_row_id)
-    if not shelf_row.is_default:
-        shelf_row.delete()
+    shelf_row.delete()
     return redirect(request.user.user_shelf)
