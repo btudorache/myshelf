@@ -68,6 +68,9 @@ class ShelfItem(models.Model):
                              related_name='row_items',
                              on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ('id',)
+
     @staticmethod
     def get_shelf_item(owner, book):
         try:
