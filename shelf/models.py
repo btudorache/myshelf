@@ -22,9 +22,9 @@ class Shelf(models.Model):
     @staticmethod
     def add_new_user_shelf(new_user):
         new_shelf = Shelf.objects.create(owner=new_user)
-        ShelfRow.objects.create(owner=new_user, name="Read", shelf=new_shelf)
-        ShelfRow.objects.create(owner=new_user, name="Currently Reading", shelf=new_shelf)
-        ShelfRow.objects.create(owner=new_user, name="Want to Read", shelf=new_shelf)
+        ShelfRow.objects.create(owner=new_user, name="Read", shelf=new_shelf, is_default=True)
+        ShelfRow.objects.create(owner=new_user, name="Currently Reading", shelf=new_shelf, is_default=True)
+        ShelfRow.objects.create(owner=new_user, name="Want to Read", shelf=new_shelf, is_default=True)
 
 
 class ShelfRow(models.Model):

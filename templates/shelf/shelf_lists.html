@@ -18,7 +18,7 @@
             <div class="row">
               <div class="col-12 col-sm-4">
                 <a href="{% url 'shelf_row_items' shelf.id %}" class="btn btn-primary btn-lg active" role="button">See Shelf Row</a>
-                {% if shelf.is_default %}
+                {% if shelf.is_default == False %}
                   <a id="delete_shelf_row_button" href="{% url 'delete_shelf_row' shelf.id %}" class="btn btn-danger btn-lg active" role="button">Delete Row</a>
                 {% endif %}
               </div>
