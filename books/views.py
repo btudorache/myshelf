@@ -39,7 +39,7 @@ def book_search_list(request, genre_id=None, author_id=None):
         books = Book.objects.all()
     genres = Genre.objects.all()
 
-    paginator = Paginator(books, 10)
+    paginator = Paginator(books, 8)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

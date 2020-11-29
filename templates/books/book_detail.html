@@ -11,7 +11,7 @@
     <div class="col-sm-12 col-md-8">
       <div class="card mb-4">
         <div class="card-body h-80">
-          <h5 class="card-title">Title: {{ book.title }}</h5>
+          <h5 class="card-title">{{ book.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted"><a href="{% url 'book_list_by_author' book.author.id %}">{% if book.author.first_name %}{{ book.author.first_name }}{% endif %} {{ book.author.last_name }}</a></h6>            <p class="card-text">{{ book.description }}</p>
 
             {% if rating %}
