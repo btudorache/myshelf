@@ -3,4 +3,3 @@ __pycache__/
 .idea/
 *.sqlite3
 media/profile_covers
-media/book_covers
