@@ -5,7 +5,7 @@
           <p class="card-title">
             <span class="date">{{ action.created|timesince }} ago</span>
             <br />
-            <a href="{% url 'user_detail' user.id %}">
+            <a href="{% url 'social_user_detail' user.id %}">
               {{ user.first_name }}
             </a>
             {{ action.verb }}
@@ -30,7 +30,7 @@
             {% ifequal action.verb "started following" %}
               {% if action.target %}
                 {% with target=action.target %}
-                  <a href="{% if request.user.id == target.id %}{% url 'user_profile' %}{% else %}{% url 'user_detail' target.id %}{% endif %}">{{ target.first_name }}</a>
+                  <a href="{% if request.user.id == target.id %}{% url 'user_profile' %}{% else %}{% url 'social_user_detail' target.id %}{% endif %}">{{ target.first_name }}</a>
                 {% endwith %}
               {% endif %}
             {% endifequal %}

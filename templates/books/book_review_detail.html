@@ -11,7 +11,7 @@
             <h5 class="card-title"><a href="{% if request.user.id == review.reviewer.id %}{% url 'user_profile' %}{% else %}{% url 'user_detail' review.reviewer.id %}{% endif %}">{{ review.reviewer.get_full_name }}</a> - {{ review.datetime }}</h5>
             <p>{{ review.text }}</p>
             {% if request.user == review.reviewer%}
-              <a href="{% url 'update_book_review' review.book_reviewed.title review.id %}" class="btn btn-primary" role="button" aria-pressed="true">Update review</a>
+              <a href="{% url 'update_book_review' review.book_reviewed.id review.id %}" class="btn btn-primary" role="button" aria-pressed="true">Update review</a>
             {% endif %}
           </div>
         </div>
