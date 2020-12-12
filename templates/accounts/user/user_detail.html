@@ -32,6 +32,14 @@
 
   <div class="row row-content align-items-center">
     <div class="col">
+      <h2>Social</h2>
+        <p><strong>Total followed users: {{ user.following.count }}</strong></p>
+        <p>Followed users: {% for user in user.following.all %}<a href="{% url 'social_user_detail' user.id %}">{{ user.username }} </a>{% endfor %}</p>
+    </div>
+  </div>
+
+  <div class="row row-content align-items-center">
+    <div class="col">
       <h2>Shelves</h2>
       <p><strong>Total books in shelf: {{ user.user_shelf.get_total_books_in_shelf }}</strong></p>
       <div class="row">
