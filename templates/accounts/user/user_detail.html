@@ -28,8 +28,19 @@
         </div>
       </div>
     </div>
-    <div class="col">
+  </div>
 
+  <div class="row row-content align-items-center">
+    <div class="col">
+      <h2>Shelves</h2>
+      <p><strong>Total books in shelf: {{ user.user_shelf.get_total_books_in_shelf }}</strong></p>
+      <div class="row">
+        <div class="col">
+          {% for shelf_row in user.user_shelf.get_shelves %}
+            <p><a href="{{ shelf_row.get_absolute_url }}">{{ shelf_row.name }}</a> - {{ shelf_row.num_items }} Books</p>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   </div>
 {% endblock %}

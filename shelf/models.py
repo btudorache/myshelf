@@ -19,6 +19,12 @@ class Shelf(models.Model):
     def get_shelves(self):
         return ShelfRow.objects.filter(shelf=self)
 
+    def get_total_books_in_shelf(self):
+        total_books = 0
+        for shelf_row in self.get_shelves():
+            total_books += shelf_row.num_items
+        return total_books
+
     @staticmethod
     def add_new_user_shelf(new_user):
         new_shelf = Shelf.objects.create(owner=new_user)
