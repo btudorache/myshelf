@@ -1,1 +1,2294 @@
-[{"model": "books.genre", "pk": 1, "fields": {"genre": "Classics", "description": ""}}, {"model": "books.genre", "pk": 2, "fields": {"genre": "Fiction", "description": ""}}, {"model": "books.genre", "pk": 3, "fields": {"genre": "Literature", "description": ""}}, {"model": "books.genre", "pk": 4, "fields": {"genre": "Adventure", "description": ""}}, {"model": "books.genre", "pk": 5, "fields": {"genre": "Religion", "description": ""}}, {"model": "books.genre", "pk": 6, "fields": {"genre": "Nonfiction", "description": ""}}, {"model": "books.genre", "pk": 7, "fields": {"genre": "Christian", "description": ""}}, {"model": "books.genre", "pk": 8, "fields": {"genre": "Philosophy", "description": ""}}, {"model": "books.genre", "pk": 9, "fields": {"genre": "Poetry", "description": ""}}, {"model": "books.genre", "pk": 10, "fields": {"genre": "Romance", "description": ""}}, {"model": "books.genre", "pk": 11, "fields": {"genre": "Science Fiction", "description": ""}}, {"model": "books.genre", "pk": 12, "fields": {"genre": "Contemporary", "description": ""}}, {"model": "books.genre", "pk": 13, "fields": {"genre": "War", "description": ""}}, {"model": "books.genre", "pk": 14, "fields": {"genre": "Westerns", "description": ""}}, {"model": "books.genre", "pk": 15, "fields": {"genre": "Plays", "description": ""}}, {"model": "books.genre", "pk": 16, "fields": {"genre": "Drama", "description": ""}}, {"model": "books.author", "pk": 1, "fields": {"first_name": "Herman", "last_name": "Melville", "description": ""}}, {"model": "books.author", "pk": 2, "fields": {"first_name": null, "last_name": "Various", "description": ""}}, {"model": "books.author", "pk": 3, "fields": {"first_name": "Fyodor", "last_name": "Dostoyevsky", "description": ""}}, {"model": "books.author", "pk": 4, "fields": {"first_name": "James", "last_name": "Joyce", "description": ""}}, {"model": "books.author", "pk": 5, "fields": {"first_name": "Miguel", "last_name": "de Cervantes", "description": ""}}, {"model": "books.author", "pk": 6, "fields": {"first_name": "Dante", "last_name": "Alighieri", "description": ""}}, {"model": "books.author", "pk": 7, "fields": {"first_name": "Vladimir", "last_name": "Nabokov", "description": ""}}, {"model": "books.author", "pk": 8, "fields": {"first_name": null, "last_name": "Homer", "description": ""}}, {"model": "books.author", "pk": 9, "fields": {"first_name": "Thomas", "last_name": "Pynchon", "description": ""}}, {"model": "books.author", "pk": 10, "fields": {"first_name": "David Foster", "last_name": "Wallace", "description": ""}}, {"model": "books.author", "pk": 11, "fields": {"first_name": "John", "last_name": "Williams", "description": ""}}, {"model": "books.author", "pk": 12, "fields": {"first_name": "Leo", "last_name": "Tolstoy", "description": ""}}, {"model": "books.author", "pk": 13, "fields": {"first_name": "Cormac", "last_name": "McCarthy", "description": ""}}, {"model": "books.author", "pk": 14, "fields": {"first_name": "Friedrich", "last_name": "Nietzsche", "description": ""}}, {"model": "books.author", "pk": 15, "fields": {"first_name": "William", "last_name": "Shakespeare", "description": ""}}, {"model": "books.author", "pk": 16, "fields": {"first_name": "Albert", "last_name": "Camus", "description": ""}}, {"model": "books.author", "pk": 17, "fields": {"first_name": "George", "last_name": "Orwell", "description": ""}}, {"model": "books.author", "pk": 18, "fields": {"first_name": "Marcel", "last_name": "Proust", "description": ""}}, {"model": "books.author", "pk": 19, "fields": {"first_name": "Johann Wolfgang", "last_name": "Goethe", "description": ""}}, {"model": "books.book", "pk": 1, "fields": {"title": "Moby Dick", "author": 1, "description": "\"It is the horrible texture of a fabric that should be woven of ships' cables and hawsers. A Polar wind blows through it, and birds of prey hover over it.\" So Melville wrote of his masterpiece, one of the greatest works of imagination in literary history. In part, Moby-Dick is the story of an eerily compelling madman pursuing an unholy war against a creature as vast and dangerous and unknowable as the sea itself. But more than just a novel of adventure, more than an encyclopaedia of whaling lore and legend, the book can be seen as part of its author's lifelong meditation on America. Written with wonderfully redemptive humour, Moby-Dick is also a profound inquiry into character, faith, and the nature of perception.", "cover": "book_covers/moby_dick.jpg", "num_ratings": 3, "average_rating": 3.6666666666666665, "genre": [1, 2, 3, 4]}}, {"model": "books.book", "pk": 2, "fields": {"title": "The Bible", "author": 2, "description": "The Bible is a collection of religious texts or scriptures sacred to Christians, Jews, Samaritans, Rastafari and others. It appears in the form of an anthology, a compilation of texts of a variety of forms that are all linked by the belief that they are collectively revelations of God. These texts include theologically-focused historical accounts, hymns, prayers, proverbs, parables, didactic letters, erotica, poetry, and prophecies. Believers also generally consider the Bible to be a product of divine inspiration.", "cover": "book_covers/bible_cover.jpg", "num_ratings": 3, "average_rating": 3.0, "genre": [1, 5, 6, 7]}}, {"model": "books.book", "pk": 3, "fields": {"title": "The Brothers Karamazov", "author": 3, "description": "The Brothers Karamazov is a murder mystery, a courtroom drama, and an exploration of erotic rivalry in a series of triangular love affairs involving the \"wicked and sentimental\" Fyodor Pavlovich Karamazov and his three sons-the impulsive and sensual Dmitri; the coldly rational Ivan; and the healthy, red-cheeked young novice Alyosha. Through the gripping events of their story, Dostoevsky portrays the whole of Russian life, is social and spiritual striving, in what was both the golden age and a tragic turning point in Russian culture.", "cover": "book_covers/brothers_karamazov.jpg", "num_ratings": 1, "average_rating": 5.0, "genre": [1, 2, 3, 8]}}, {"model": "books.book", "pk": 4, "fields": {"title": "Crime And Punishment", "author": 3, "description": "Raskolnikov, a destitute and desperate former student, wanders through the slums of St Petersburg and commits a random murder without remorse or regret. He imagines himself to be a great man, a Napoleon: acting for a higher purpose beyond conventional moral law. But as he embarks on a dangerous game of cat and mouse with a suspicious police investigator, Raskolnikov is pursued by the growing voice of his conscience and finds the noose of his own guilt tightening around his neck. Only Sonya, a downtrodden prostitute, can offer the chance of redemption.", "cover": "book_covers/crime_and_punishment.jpg", "num_ratings": 2, "average_rating": 4.5, "genre": [1, 2, 3, 8]}}, {"model": "books.book", "pk": 5, "fields": {"title": "Ulysses", "author": 4, "description": "Loosely based on the Odyssey, this landmark of modern literature follows ordinary Dubliners in 1904. Capturing a single day in the life of Dubliner Leopold Bloom, his friends Buck Mulligan and Stephen Dedalus, his wife Molly, and a scintillating cast of supporting characters, Joyce pushes Celtic lyricism and vulgarity to splendid extremes. Captivating experimental techniques range from interior monologues to exuberant wordplay and earthy humor. A major achievement in 20th century literature.", "cover": "book_covers/ulysses.jpg", "num_ratings": 1, "average_rating": 5.0, "genre": [1, 2, 3]}}, {"model": "books.book", "pk": 6, "fields": {"title": "Don Quixote", "author": 5, "description": "Don Quixote has become so entranced by reading chivalric romances that he determines to become a knight-errant himself. In the company of his faithful squire, Sancho Panza, his exploits blossom in all sorts of wonderful ways. While Quixote's fancy often leads him astray-he tilts at windmills, imagining them to be giants-Sancho acquires cunning and a certain sagacity. Sane madman and wise fool, they roam the world together, and together they have haunted readers' imaginations for nearly four hundred years.", "cover": "book_covers/don_quixote.jpg", "num_ratings": 1, "average_rating": 3.0, "genre": [1, 2, 3, 4]}}, {"model": "books.book", "pk": 7, "fields": {"title": "The Divine Comedy", "author": 6, "description": "The Divine Comedy describes Dante's descent into Hell with Virgil as a guide; his ascent of Mount Purgatory and encounter with his dead love, Beatrice; and finally, his arrival in Heaven. Examining questions of faith, desire and enlightenment, the poem is a brilliantly nuanced and moving allegory of human redemption.", "cover": "book_covers/divine_comedy.jpg", "num_ratings": 1, "average_rating": 5.0, "genre": [1, 2, 3, 9]}}, {"model": "books.book", "pk": 8, "fields": {"title": "Lolita", "author": 7, "description": "Humbert Humbert - scholar, aesthete and romantic - has fallen completely and utterly in love with Lolita Haze, his landlady's gum-snapping, silky skinned twelve-year-old daughter. Reluctantly agreeing to marry Mrs Haze just to be close to Lolita, Humbert suffers greatly in the pursuit of romance; but when Lo herself starts looking for attention elsewhere, he will carry her off on a desperate cross-country misadventure, all in the name of Love. Hilarious, flamboyant, heart-breaking and full of ingenious word play, Lolita is an immaculate, unforgettable masterpiece of obsession, delusion and lust.", "cover": "book_covers/lolita.jpg", "num_ratings": 1, "average_rating": 4.0, "genre": [1, 2, 3, 10]}}, {"model": "books.book", "pk": 9, "fields": {"title": "The Iliad", "author": 8, "description": "Dating to the ninth century B.C., Homer's timeless poem still vividly conveys the horror and heroism of men and gods wrestling with towering emotions and battling amidst devastation and destruction, as it moves inexorably to the wrenching, tragic conclusion of the Trojan War. Renowned classicist Bernard Knox observes in his superb introduction that although the violence of the Iliad is grim and relentless, it coexists with both images of civilized life and a poignant yearning for peace.", "cover": "book_covers/the_iliad.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 9]}}, {"model": "books.book", "pk": 10, "fields": {"title": "Gravity's Rainbow", "author": 9, "description": "Winner of the 1973 National Book Award, Gravity's Rainbow is a postmodern epic, a work as exhaustively significant to the second half of the 20th century as Joyce's Ulysses was to the first. Its sprawling, encyclopedic narrative, and penetrating analysis of the impact of technology on society make it an intellectual tour de force.", "cover": "book_covers/gravitys_rainbow.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 11]}}, {"model": "books.book", "pk": 11, "fields": {"title": "Infinite Jest", "author": 10, "description": "Set in an addicts' halfway house and a tennis academy, and featuring the most endearingly screwed-up family to come along in recent fiction, Infinite Jest explores essential questions about what entertainment is and why it has come to so dominate our lives; about how our desire for entertainment affects our need to connect with other people; and about what the pleasures we choose say about who we are.", "cover": "book_covers/infinite_jest.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 12]}}, {"model": "books.book", "pk": 12, "fields": {"title": "The Odyssey", "author": 8, "description": "If the Iliad is the world's greatest war epic, then the Odyssey is literature's grandest evocation of everyman's journey though life. Odysseus' reliance on his wit and wiliness for survival in his encounters with divine and natural forces, during his ten-year voyage home to Ithaca after the Trojan War, is at once a timeless human story and an individual test of moral endurance.", "cover": "book_covers/the_odyssey.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 4, 9]}}, {"model": "books.book", "pk": 13, "fields": {"title": "Stoner", "author": 11, "description": "William Stoner is born at the end of the nineteenth century into a dirt-poor Missouri farming family. Sent to the state university to study agronomy, he instead falls in love with English literature and embraces a scholar's life, so different from the hardscrabble existence he has known. And yet as the years pass, Stoner encounters a succession of disappointments: marriage into a \"proper\" family estranges him from his parents; his career is stymied; his wife and daughter turn coldly away from him; a transforming experience of new love ends under threat of scandal. Driven ever deeper within himself, Stoner rediscovers the stoic silence of his forebears and confronts an essential solitude.", "cover": "book_covers/stoner.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3]}}, {"model": "books.book", "pk": 14, "fields": {"title": "Anna Karenina", "author": 12, "description": "Acclaimed by many as the world's greatest novel, Anna Karenina provides a vast panorama of contemporary life in Russia and of humanity in general. In it Tolstoy uses his intense imaginative insight to create some of the most memorable characters in all of literature. Anna is a sophisticated woman who abandons her empty existence as the wife of Karenin and turns to Count Vronsky to fulfil her passionate nature - with tragic consequences. Levin is a reflection of Tolstoy himself, often expressing the author's own views and convictions.", "cover": "book_covers/anna_karenina.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 10]}}, {"model": "books.book", "pk": 15, "fields": {"title": "War And Peace", "author": 12, "description": "In Russia's struggle with Napoleon, Tolstoy saw a tragedy that involved all mankind. Greater than a historical chronicle, War and Peace is an affirmation of life itself, 'a complete picture', as a contemporary reviewer put it, 'of everything in which people find their happiness and greatness, their grief and humiliation'. Tolstoy gave his personal approval to this translation, published here in a new single volume edition, which includes an introduction by Henry Gifford, and Tolstoy's important essay 'Some Words about War and Peace'.", "cover": "book_covers/war_and_peace.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 13]}}, {"model": "books.book", "pk": 16, "fields": {"title": "Blood Meridian", "author": 13, "description": "Blood Meridian is an epic novel of the violence and depravity that attended America's westward expansion, brilliantly subverting the conventions of the Western novel and the mythology of the Wild West. Based on historical events that took place on the Texas-Mexico border in the 1850s, it traces the fortunes of the Kid, a fourteen-year-old Tennesseean who stumbles into a nightmarish world where Indians are being murdered and the market for their scalps is thriving.", "cover": "book_covers/blood_meridian.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 14]}}, {"model": "books.book", "pk": 17, "fields": {"title": "Notes From Underground", "author": 3, "description": "Dostoevsky's most revolutionary novel, Notes from Underground marks the dividing line between nineteenth- and twentieth-century fiction, and between the visions of self each century embodied. One of the most remarkable characters in literature, the unnamed narrator is a former official who has defiantly withdrawn into an underground existence. In complete retreat from society, he scrawls a passionate, obsessive, self-contradictory narrative that serves as a devastating attack on social utopianism and an assertion of man's essentially irrational nature.", "cover": "book_covers/notes_from_underground.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 8]}}, {"model": "books.book", "pk": 18, "fields": {"title": "Thus Spoke Zarathustra", "author": 14, "description": "Thus Spoke Zarathustra is a foundational work of Western literature and is widely considered to be Friedrich Nietzsche's masterpiece. It includes the German philosopher's famous discussion of the phrase 'God is dead' as well as his concept of the Superman. Nietzsche delineates his Will to Power theory and devotes pages to critiquing Christian thinking, in particular Christianity's definition of good and evil.", "cover": "book_covers/thus_spoke_zarathustra.jpg", "num_ratings": 1, "average_rating": 5.0, "genre": [1, 3, 6, 8]}}, {"model": "books.book", "pk": 19, "fields": {"title": "Hamlet", "author": 15, "description": "Among Shakespeare's plays, \"Hamlet\" is considered by many his masterpiece. Among actors, the role of Hamlet, Prince of Denmark, is considered the jewel in the crown of a triumphant theatrical career. Now Kenneth Branagh plays the leading role and co-directs a brillant ensemble performance. Three generations of legendary leading actors, many of whom first assembled for the Oscar-winning film \"Henry V\", gather here to perform the rarely heard complete version of the play. This clear, subtly nuanced, stunning dramatization, presented by The Renaissance Theatre Company in association with \"Bbc\" Broadcasting, features such luminaries as Sir John Gielgud, Derek Jacobi, Emma Thompson and Christopher Ravenscroft. It combines a full cast with stirring music and sound effects to bring this magnificent Shakespearen classic vividly to life. Revealing new riches with each listening, this production of \"Hamlet\" is an invaluable aid for students, teachers and all true lovers of Shakespeare - a recording to be treasured for decades to come.", "cover": "book_covers/hamlet.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 15, 16]}}, {"model": "books.book", "pk": 20, "fields": {"title": "The Stranger", "author": 16, "description": "Through the story of an ordinary man unwittingly drawn into a senseless murder on an Algerian beach, Camus explored what he termed \"the nakedness of man faced with the absurd.\" First published in English in 1946; now in a new translation by Matthew Ward.", "cover": "book_covers/the_stranger.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 8]}}, {"model": "books.book", "pk": 21, "fields": {"title": "1984", "author": 17, "description": "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life-the ubiquity of television, the distortion of the language-and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written.", "cover": "book_covers/1984.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 11]}}, {"model": "books.book", "pk": 22, "fields": {"title": "In Search Of Lost Time", "author": 18, "description": "For this complete, authoritative English-language edition, D. J. Enright has revised the late Terence Kilmartin's acclaimed reworking of C. K. Scott Moncrieff's translation to take into account the new definitive French editions of 'A la recherche du temps perdu' (the final volume of these new editions was published by the Bibliotheque de la Pleiade in 1989).", "cover": "book_covers/in_search_of_lost_time.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 8]}}, {"model": "books.book", "pk": 23, "fields": {"title": "Dubliners", "author": 4, "description": "This work of art reflects life in Ireland at the turn of the last century, and by rejecting euphemism, reveals to the Irish their unromantic realities. Each of the 15 stories offers glimpses into the lives of ordinary Dubliners, and collectively they paint a portrait of a nation.", "cover": "book_covers/dubliners.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3]}}, {"model": "books.book", "pk": 24, "fields": {"title": "Faust", "author": 19, "description": "Goethe's masterpiece and perhaps the greatest work in German literature, Faust has made the legendary German alchemist one of the central myths of the Western world. Here indeed is a monumental Faust, an audacious man boldly wagering with the devil, Mephistopheles, that no magic, sensuality, experience, or knowledge can lead him to a moment he would wish to last forever. Here, in Faust, Part I, the tremendous versatility of Goethe's genius creates some of the most beautiful passages in literature. Here too we experience Goethe's characteristic humor, the excitement and eroticism of the witches' Walpurgis Night, and the moving emotion of Gretchen's tragic fate.", "cover": "book_covers/faust.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 9, 15]}}, {"model": "books.book", "pk": 25, "fields": {"title": "The Idiot", "author": 3, "description": "Returning to Russia from a sanitarium in Switzerland, the Christ-like epileptic Prince Myshkin finds himself enmeshed in a tangle of love, torn between two women-the notorious kept woman Nastasya and the pure Aglaia-both involved, in turn, with the corrupt, money-hungry Ganya. In the end, Myshkin's honesty, goodness, and integrity are shown to be unequal to the moral emptiness of those around him.", "cover": "book_covers/the_idiot.jpg", "num_ratings": 0, "average_rating": 0.0, "genre": [1, 2, 3, 8]}}, {"model": "books.bookrating", "pk": 1, "fields": {"rated_by": 1, "rate": 4, "book_rated": 1}}, {"model": "books.bookrating", "pk": 2, "fields": {"rated_by": 1, "rate": 3, "book_rated": 2}}, {"model": "books.bookrating", "pk": 3, "fields": {"rated_by": 1, "rate": 5, "book_rated": 3}}, {"model": "books.bookrating", "pk": 4, "fields": {"rated_by": 1, "rate": 5, "book_rated": 4}}, {"model": "books.bookrating", "pk": 5, "fields": {"rated_by": 1, "rate": 5, "book_rated": 7}}, {"model": "books.bookrating", "pk": 6, "fields": {"rated_by": 4, "rate": 5, "book_rated": 1}}, {"model": "books.bookrating", "pk": 7, "fields": {"rated_by": 4, "rate": 2, "book_rated": 2}}, {"model": "books.bookrating", "pk": 8, "fields": {"rated_by": 4, "rate": 4, "book_rated": 4}}, {"model": "books.bookrating", "pk": 9, "fields": {"rated_by": 4, "rate": 4, "book_rated": 8}}, {"model": "books.bookrating", "pk": 10, "fields": {"rated_by": 6, "rate": 2, "book_rated": 1}}, {"model": "books.bookrating", "pk": 11, "fields": {"rated_by": 6, "rate": 3, "book_rated": 6}}, {"model": "books.bookrating", "pk": 12, "fields": {"rated_by": 6, "rate": 5, "book_rated": 5}}, {"model": "books.bookrating", "pk": 13, "fields": {"rated_by": 5, "rate": 4, "book_rated": 2}}, {"model": "books.bookrating", "pk": 14, "fields": {"rated_by": 5, "rate": 5, "book_rated": 18}}, {"model": "books.bookreview", "pk": 1, "fields": {"book_reviewed": 1, "reviewer": 1, "text": "Very nice book. I loved the part about the whale!", "datetime": "2020-11-29T20:20:21.916Z"}}, {"model": "books.bookreview", "pk": 2, "fields": {"book_reviewed": 3, "reviewer": 1, "text": "My favourite book! Alyosha is the best!", "datetime": "2020-11-29T20:21:13.366Z"}}, {"model": "books.bookreview", "pk": 3, "fields": {"book_reviewed": 4, "reviewer": 1, "text": "Another classic by my favourite author", "datetime": "2020-11-29T20:24:10.800Z"}}, {"model": "books.bookreview", "pk": 4, "fields": {"book_reviewed": 7, "reviewer": 1, "text": "Reading this book is like looking to the sun", "datetime": "2020-11-29T20:24:56.994Z"}}, {"model": "books.bookreview", "pk": 5, "fields": {"book_reviewed": 1, "reviewer": 4, "text": "I liked this book very much", "datetime": "2020-11-29T20:30:38.252Z"}}, {"model": "books.bookreview", "pk": 6, "fields": {"book_reviewed": 2, "reviewer": 4, "text": "A must read, but It was a drag.", "datetime": "2020-11-29T20:31:11.476Z"}}, {"model": "books.bookreview", "pk": 7, "fields": {"book_reviewed": 4, "reviewer": 4, "text": "Currently reading this but I don't like it very much", "datetime": "2020-11-29T20:31:41.396Z"}}, {"model": "books.bookreview", "pk": 8, "fields": {"book_reviewed": 8, "reviewer": 4, "text": "It was an ok book.", "datetime": "2020-11-29T20:32:08.896Z"}}, {"model": "books.bookreview", "pk": 9, "fields": {"book_reviewed": 1, "reviewer": 6, "text": "Just talking about some whales. Pretty boring.", "datetime": "2020-11-29T20:35:36.640Z"}}, {"model": "books.bookreview", "pk": 10, "fields": {"book_reviewed": 6, "reviewer": 6, "text": "What a childish book. How can you hit some windmills?", "datetime": "2020-11-29T20:36:20.908Z"}}, {"model": "books.bookreview", "pk": 11, "fields": {"book_reviewed": 2, "reviewer": 5, "text": "Must read for every christian!", "datetime": "2020-11-29T20:38:01.495Z"}}, {"model": "accounts.profile", "pk": 1, "fields": {"user": 1, "location": "Honolulu", "date_of_birth": "1999-11-17", "photo": "default_profile.jpg"}}, {"model": "accounts.profile", "pk": 4, "fields": {"user": 4, "location": "Romania", "date_of_birth": "2000-10-10", "photo": "default_profile.jpg"}}, {"model": "accounts.profile", "pk": 5, "fields": {"user": 5, "location": "Focsani", "date_of_birth": "2000-05-04", "photo": "default_profile.jpg"}}, {"model": "accounts.profile", "pk": 6, "fields": {"user": 6, "location": "Bucharest", "date_of_birth": "2001-09-01", "photo": "default_profile.jpg"}}, {"model": "social.contact", "pk": 6, "fields": {"user_from": 1, "user_to": 4, "created": "2020-11-29T20:19:23.215Z"}}, {"model": "social.contact", "pk": 7, "fields": {"user_from": 1, "user_to": 5, "created": "2020-11-29T20:19:56.734Z"}}, {"model": "social.contact", "pk": 8, "fields": {"user_from": 4, "user_to": 1, "created": "2020-11-29T20:28:53.618Z"}}, {"model": "social.contact", "pk": 9, "fields": {"user_from": 6, "user_to": 1, "created": "2020-11-29T20:35:01.060Z"}}, {"model": "social.contact", "pk": 10, "fields": {"user_from": 6, "user_to": 5, "created": "2020-11-29T20:35:07.412Z"}}, {"model": "shelf.shelf", "pk": 1, "fields": {"owner": 1}}, {"model": "shelf.shelf", "pk": 4, "fields": {"owner": 4}}, {"model": "shelf.shelf", "pk": 5, "fields": {"owner": 5}}, {"model": "shelf.shelf", "pk": 6, "fields": {"owner": 6}}, {"model": "shelf.shelfrow", "pk": 1, "fields": {"owner": 1, "name": "Currently reading", "shelf": 1, "num_items": 0, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 2, "fields": {"owner": 1, "name": "Want to Read", "shelf": 1, "num_items": 2, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 3, "fields": {"owner": 1, "name": "Read", "shelf": 1, "num_items": 1, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 10, "fields": {"owner": 4, "name": "Read", "shelf": 4, "num_items": 3, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 11, "fields": {"owner": 4, "name": "Currently Reading", "shelf": 4, "num_items": 1, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 12, "fields": {"owner": 4, "name": "Want to Read", "shelf": 4, "num_items": 1, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 13, "fields": {"owner": 5, "name": "Read", "shelf": 5, "num_items": 1, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 14, "fields": {"owner": 5, "name": "Currently Reading", "shelf": 5, "num_items": 0, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 15, "fields": {"owner": 5, "name": "Want to Read", "shelf": 5, "num_items": 0, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 16, "fields": {"owner": 1, "name": "Favourite Books", "shelf": 1, "num_items": 3, "is_default": false}}, {"model": "shelf.shelfrow", "pk": 17, "fields": {"owner": 6, "name": "Read", "shelf": 6, "num_items": 2, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 18, "fields": {"owner": 6, "name": "Currently Reading", "shelf": 6, "num_items": 0, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 19, "fields": {"owner": 6, "name": "Want to Read", "shelf": 6, "num_items": 0, "is_default": true}}, {"model": "shelf.shelfrow", "pk": 20, "fields": {"owner": 5, "name": "Philosophy list", "shelf": 5, "num_items": 3, "is_default": false}}, {"model": "shelf.shelfitem", "pk": 1, "fields": {"owner": 1, "datetime": "2020-11-29", "shelf_row": 3, "book": 1}}, {"model": "shelf.shelfitem", "pk": 2, "fields": {"owner": 1, "datetime": "2020-11-29", "shelf_row": 16, "book": 3}}, {"model": "shelf.shelfitem", "pk": 3, "fields": {"owner": 1, "datetime": "2020-11-29", "shelf_row": 16, "book": 4}}, {"model": "shelf.shelfitem", "pk": 4, "fields": {"owner": 1, "datetime": "2020-11-29", "shelf_row": 2, "book": 6}}, {"model": "shelf.shelfitem", "pk": 5, "fields": {"owner": 1, "datetime": "2020-11-29", "shelf_row": 16, "book": 7}}, {"model": "shelf.shelfitem", "pk": 6, "fields": {"owner": 1, "datetime": "2020-11-29", "shelf_row": 2, "book": 8}}, {"model": "shelf.shelfitem", "pk": 7, "fields": {"owner": 4, "datetime": "2020-11-29", "shelf_row": 10, "book": 1}}, {"model": "shelf.shelfitem", "pk": 8, "fields": {"owner": 4, "datetime": "2020-11-29", "shelf_row": 10, "book": 2}}, {"model": "shelf.shelfitem", "pk": 9, "fields": {"owner": 4, "datetime": "2020-11-29", "shelf_row": 11, "book": 4}}, {"model": "shelf.shelfitem", "pk": 10, "fields": {"owner": 4, "datetime": "2020-11-29", "shelf_row": 10, "book": 8}}, {"model": "shelf.shelfitem", "pk": 11, "fields": {"owner": 4, "datetime": "2020-11-29", "shelf_row": 12, "book": 5}}, {"model": "shelf.shelfitem", "pk": 12, "fields": {"owner": 6, "datetime": "2020-11-29", "shelf_row": 17, "book": 1}}, {"model": "shelf.shelfitem", "pk": 13, "fields": {"owner": 6, "datetime": "2020-11-29", "shelf_row": 17, "book": 6}}, {"model": "shelf.shelfitem", "pk": 14, "fields": {"owner": 5, "datetime": "2020-11-29", "shelf_row": 13, "book": 2}}, {"model": "shelf.shelfitem", "pk": 15, "fields": {"owner": 5, "datetime": "2020-11-29", "shelf_row": 20, "book": 3}}, {"model": "shelf.shelfitem", "pk": 16, "fields": {"owner": 5, "datetime": "2020-11-29", "shelf_row": 20, "book": 17}}, {"model": "shelf.shelfitem", "pk": 17, "fields": {"owner": 5, "datetime": "2020-11-29", "shelf_row": 20, "book": 18}}, {"model": "actions.action", "pk": 5, "fields": {"user": 1, "verb": "started following", "target_ct": 15, "target_id": 4, "created": "2020-11-29T20:19:23.232Z"}}, {"model": "actions.action", "pk": 6, "fields": {"user": 1, "verb": "started following", "target_ct": 15, "target_id": 5, "created": "2020-11-29T20:19:56.751Z"}}, {"model": "actions.action", "pk": 7, "fields": {"user": 1, "verb": "rated", "target_ct": 2, "target_id": 1, "created": "2020-11-29T20:20:05.634Z"}}, {"model": "actions.action", "pk": 8, "fields": {"user": 1, "verb": "reviewed book", "target_ct": 5, "target_id": 1, "created": "2020-11-29T20:20:21.930Z"}}, {"model": "actions.action", "pk": 9, "fields": {"user": 1, "verb": "added book to shelf", "target_ct": 9, "target_id": 3, "created": "2020-11-29T20:20:26.910Z"}}, {"model": "actions.action", "pk": 10, "fields": {"user": 1, "verb": "rated", "target_ct": 2, "target_id": 2, "created": "2020-11-29T20:20:51.339Z"}}, {"model": "actions.action", "pk": 11, "fields": {"user": 1, "verb": "rated", "target_ct": 2, "target_id": 3, "created": "2020-11-29T20:20:59.139Z"}}, {"model": "actions.action", "pk": 12, "fields": {"user": 1, "verb": "reviewed book", "target_ct": 5, "target_id": 2, "created": "2020-11-29T20:21:13.375Z"}}, {"model": "actions.action", "pk": 13, "fields": {"user": 1, "verb": "added book to shelf", "target_ct": 9, "target_id": 16, "created": "2020-11-29T20:21:54.108Z"}}, {"model": "actions.action", "pk": 14, "fields": {"user": 1, "verb": "reviewed book", "target_ct": 5, "target_id": 3, "created": "2020-11-29T20:24:10.813Z"}}, {"model": "actions.action", "pk": 15, "fields": {"user": 1, "verb": "added book to shelf", "target_ct": 9, "target_id": 16, "created": "2020-11-29T20:24:15.094Z"}}, {"model": "actions.action", "pk": 16, "fields": {"user": 1, "verb": "rated", "target_ct": 2, "target_id": 4, "created": "2020-11-29T20:24:18.296Z"}}, {"model": "actions.action", "pk": 17, "fields": {"user": 1, "verb": "added book to shelf", "target_ct": 9, "target_id": 2, "created": "2020-11-29T20:24:28.491Z"}}, {"model": "actions.action", "pk": 18, "fields": {"user": 1, "verb": "rated", "target_ct": 2, "target_id": 7, "created": "2020-11-29T20:24:44.818Z"}}, {"model": "actions.action", "pk": 19, "fields": {"user": 1, "verb": "reviewed book", "target_ct": 5, "target_id": 4, "created": "2020-11-29T20:24:57.003Z"}}, {"model": "actions.action", "pk": 20, "fields": {"user": 4, "verb": "started following", "target_ct": 15, "target_id": 1, "created": "2020-11-29T20:28:53.629Z"}}, {"model": "actions.action", "pk": 21, "fields": {"user": 4, "verb": "reviewed book", "target_ct": 5, "target_id": 5, "created": "2020-11-29T20:30:38.267Z"}}, {"model": "actions.action", "pk": 22, "fields": {"user": 4, "verb": "rated", "target_ct": 2, "target_id": 1, "created": "2020-11-29T20:30:43.948Z"}}, {"model": "actions.action", "pk": 23, "fields": {"user": 4, "verb": "added book to shelf", "target_ct": 9, "target_id": 10, "created": "2020-11-29T20:30:48.572Z"}}, {"model": "actions.action", "pk": 24, "fields": {"user": 4, "verb": "rated", "target_ct": 2, "target_id": 2, "created": "2020-11-29T20:30:55.677Z"}}, {"model": "actions.action", "pk": 25, "fields": {"user": 4, "verb": "reviewed book", "target_ct": 5, "target_id": 6, "created": "2020-11-29T20:31:11.489Z"}}, {"model": "actions.action", "pk": 26, "fields": {"user": 4, "verb": "rated", "target_ct": 2, "target_id": 4, "created": "2020-11-29T20:31:26.175Z"}}, {"model": "actions.action", "pk": 27, "fields": {"user": 4, "verb": "added book to shelf", "target_ct": 9, "target_id": 11, "created": "2020-11-29T20:31:28.675Z"}}, {"model": "actions.action", "pk": 28, "fields": {"user": 4, "verb": "reviewed book", "target_ct": 5, "target_id": 7, "created": "2020-11-29T20:31:41.412Z"}}, {"model": "actions.action", "pk": 29, "fields": {"user": 4, "verb": "rated", "target_ct": 2, "target_id": 8, "created": "2020-11-29T20:32:01.376Z"}}, {"model": "actions.action", "pk": 30, "fields": {"user": 4, "verb": "reviewed book", "target_ct": 5, "target_id": 8, "created": "2020-11-29T20:32:08.910Z"}}, {"model": "actions.action", "pk": 31, "fields": {"user": 4, "verb": "added book to shelf", "target_ct": 9, "target_id": 10, "created": "2020-11-29T20:32:36.254Z"}}, {"model": "actions.action", "pk": 32, "fields": {"user": 4, "verb": "added book to shelf", "target_ct": 9, "target_id": 12, "created": "2020-11-29T20:33:05.072Z"}}, {"model": "actions.action", "pk": 33, "fields": {"user": 6, "verb": "started following", "target_ct": 15, "target_id": 1, "created": "2020-11-29T20:35:01.071Z"}}, {"model": "actions.action", "pk": 34, "fields": {"user": 6, "verb": "started following", "target_ct": 15, "target_id": 5, "created": "2020-11-29T20:35:07.420Z"}}, {"model": "actions.action", "pk": 35, "fields": {"user": 6, "verb": "rated", "target_ct": 2, "target_id": 1, "created": "2020-11-29T20:35:23.107Z"}}, {"model": "actions.action", "pk": 36, "fields": {"user": 6, "verb": "reviewed book", "target_ct": 5, "target_id": 9, "created": "2020-11-29T20:35:36.650Z"}}, {"model": "actions.action", "pk": 37, "fields": {"user": 6, "verb": "added book to shelf", "target_ct": 9, "target_id": 17, "created": "2020-11-29T20:35:47.107Z"}}, {"model": "actions.action", "pk": 38, "fields": {"user": 6, "verb": "rated", "target_ct": 2, "target_id": 6, "created": "2020-11-29T20:35:56.120Z"}}, {"model": "actions.action", "pk": 39, "fields": {"user": 6, "verb": "reviewed book", "target_ct": 5, "target_id": 10, "created": "2020-11-29T20:36:20.919Z"}}, {"model": "actions.action", "pk": 40, "fields": {"user": 6, "verb": "rated", "target_ct": 2, "target_id": 5, "created": "2020-11-29T20:36:32.770Z"}}, {"model": "actions.action", "pk": 41, "fields": {"user": 5, "verb": "rated", "target_ct": 2, "target_id": 2, "created": "2020-11-29T20:37:52.360Z"}}, {"model": "actions.action", "pk": 42, "fields": {"user": 5, "verb": "reviewed book", "target_ct": 5, "target_id": 11, "created": "2020-11-29T20:38:01.504Z"}}, {"model": "actions.action", "pk": 43, "fields": {"user": 5, "verb": "added book to shelf", "target_ct": 9, "target_id": 13, "created": "2020-11-29T20:38:05.257Z"}}, {"model": "actions.action", "pk": 44, "fields": {"user": 5, "verb": "added book to shelf", "target_ct": 9, "target_id": 20, "created": "2020-11-29T20:38:28.760Z"}}, {"model": "actions.action", "pk": 45, "fields": {"user": 5, "verb": "rated", "target_ct": 2, "target_id": 18, "created": "2020-11-29T20:38:47.625Z"}}, {"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2020-11-29T17:47:12.155Z", "user": 1, "content_type": 6, "object_id": "1", "object_repr": "Profile for user opak", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2020-11-29T17:47:23.253Z", "user": 1, "content_type": 8, "object_id": "1", "object_repr": "opak's shelf", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2020-11-29T17:47:34.973Z", "user": 1, "content_type": 9, "object_id": "1", "object_repr": "Currently reading", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2020-11-29T17:47:42.765Z", "user": 1, "content_type": 9, "object_id": "2", "object_repr": "Want to Read", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2020-11-29T17:47:49.244Z", "user": 1, "content_type": 9, "object_id": "3", "object_repr": "Read", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2020-11-29T17:55:00.988Z", "user": 1, "content_type": 1, "object_id": "5", "object_repr": "Miguel de Cervantes", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2020-11-29T17:56:48.728Z", "user": 1, "content_type": 2, "object_id": "6", "object_repr": "Don Quixote", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2020-11-29T17:57:48.212Z", "user": 1, "content_type": 1, "object_id": "6", "object_repr": "Dante Alighieri", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2020-11-29T17:57:59.761Z", "user": 1, "content_type": 3, "object_id": "9", "object_repr": "Poetry", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2020-11-29T17:59:04.203Z", "user": 1, "content_type": 2, "object_id": "7", "object_repr": "The Divine Comedy", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2020-11-29T18:00:03.769Z", "user": 1, "content_type": 3, "object_id": "10", "object_repr": "Romance", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 12, "fields": {"action_time": "2020-11-29T18:00:14.784Z", "user": 1, "content_type": 1, "object_id": "7", "object_repr": "Vladimir Nabokov", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 13, "fields": {"action_time": "2020-11-29T18:01:54.380Z", "user": 1, "content_type": 2, "object_id": "8", "object_repr": "Lolita", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 14, "fields": {"action_time": "2020-11-29T18:03:23.608Z", "user": 1, "content_type": 1, "object_id": "8", "object_repr": "None Homer", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 15, "fields": {"action_time": "2020-11-29T18:04:42.214Z", "user": 1, "content_type": 2, "object_id": "9", "object_repr": "The Iliad", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 16, "fields": {"action_time": "2020-11-29T18:10:21.147Z", "user": 1, "content_type": 3, "object_id": "11", "object_repr": "Science Fiction", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 17, "fields": {"action_time": "2020-11-29T18:10:43.186Z", "user": 1, "content_type": 1, "object_id": "9", "object_repr": "Thomas Pynchon", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 18, "fields": {"action_time": "2020-11-29T18:12:16.251Z", "user": 1, "content_type": 2, "object_id": "10", "object_repr": "Gravity's Rainbow", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 19, "fields": {"action_time": "2020-11-29T18:22:13.586Z", "user": 1, "content_type": 1, "object_id": "10", "object_repr": "David Foster Wallace", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 20, "fields": {"action_time": "2020-11-29T18:22:28.801Z", "user": 1, "content_type": 3, "object_id": "12", "object_repr": "Contemporary", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 21, "fields": {"action_time": "2020-11-29T18:23:52.135Z", "user": 1, "content_type": 2, "object_id": "11", "object_repr": "Infinite Jest", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 22, "fields": {"action_time": "2020-11-29T18:50:11.183Z", "user": 1, "content_type": 2, "object_id": "12", "object_repr": "The Odyssey", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 23, "fields": {"action_time": "2020-11-29T18:50:51.495Z", "user": 1, "content_type": 1, "object_id": "11", "object_repr": "John Williams", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 24, "fields": {"action_time": "2020-11-29T18:52:13.103Z", "user": 1, "content_type": 2, "object_id": "13", "object_repr": "Stoner", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 25, "fields": {"action_time": "2020-11-29T18:52:49.041Z", "user": 1, "content_type": 1, "object_id": "12", "object_repr": "Leo Tolstoy", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 26, "fields": {"action_time": "2020-11-29T18:54:16.455Z", "user": 1, "content_type": 2, "object_id": "14", "object_repr": "Anna Karenina", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 27, "fields": {"action_time": "2020-11-29T18:55:11.091Z", "user": 1, "content_type": 3, "object_id": "13", "object_repr": "War", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 28, "fields": {"action_time": "2020-11-29T18:56:06.744Z", "user": 1, "content_type": 2, "object_id": "15", "object_repr": "War And Peace", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 29, "fields": {"action_time": "2020-11-29T19:02:41.038Z", "user": 1, "content_type": 1, "object_id": "13", "object_repr": "Cormac McCarthy", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 30, "fields": {"action_time": "2020-11-29T19:02:55.790Z", "user": 1, "content_type": 3, "object_id": "14", "object_repr": "Westerns", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 31, "fields": {"action_time": "2020-11-29T19:03:40.407Z", "user": 1, "content_type": 2, "object_id": "16", "object_repr": "Blood Meridian", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 32, "fields": {"action_time": "2020-11-29T19:06:04.539Z", "user": 1, "content_type": 2, "object_id": "17", "object_repr": "Notes From Underground", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 33, "fields": {"action_time": "2020-11-29T19:07:18.427Z", "user": 1, "content_type": 1, "object_id": "14", "object_repr": "Friedrich Nietzsche", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 34, "fields": {"action_time": "2020-11-29T19:09:13.453Z", "user": 1, "content_type": 2, "object_id": "18", "object_repr": "Thus Spoke Zarathustra", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 35, "fields": {"action_time": "2020-11-29T19:10:19.175Z", "user": 1, "content_type": 1, "object_id": "15", "object_repr": "William Shakespeare", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 36, "fields": {"action_time": "2020-11-29T19:10:33.188Z", "user": 1, "content_type": 3, "object_id": "15", "object_repr": "Plays", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 37, "fields": {"action_time": "2020-11-29T19:10:35.649Z", "user": 1, "content_type": 3, "object_id": "16", "object_repr": "Drama", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 38, "fields": {"action_time": "2020-11-29T19:12:07.125Z", "user": 1, "content_type": 2, "object_id": "19", "object_repr": "Hamlet", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 39, "fields": {"action_time": "2020-11-29T19:13:35.291Z", "user": 1, "content_type": 1, "object_id": "16", "object_repr": "Albert Camus", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 40, "fields": {"action_time": "2020-11-29T19:14:12.117Z", "user": 1, "content_type": 2, "object_id": "20", "object_repr": "The Stranger", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 41, "fields": {"action_time": "2020-11-29T19:37:19.618Z", "user": 1, "content_type": 1, "object_id": "17", "object_repr": "George Orwell", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 42, "fields": {"action_time": "2020-11-29T19:39:01.077Z", "user": 1, "content_type": 2, "object_id": "21", "object_repr": "1984", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 43, "fields": {"action_time": "2020-11-29T19:39:29.927Z", "user": 1, "content_type": 1, "object_id": "18", "object_repr": "Marcel Proust", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 44, "fields": {"action_time": "2020-11-29T19:41:25.739Z", "user": 1, "content_type": 2, "object_id": "22", "object_repr": "In Search Of Lost Time", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 45, "fields": {"action_time": "2020-11-29T19:42:51.280Z", "user": 1, "content_type": 2, "object_id": "23", "object_repr": "Dubliners", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 46, "fields": {"action_time": "2020-11-29T19:43:56.610Z", "user": 1, "content_type": 1, "object_id": "19", "object_repr": "Johann Wolfgang Goethe", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 47, "fields": {"action_time": "2020-11-29T19:45:11.770Z", "user": 1, "content_type": 2, "object_id": "24", "object_repr": "Faust", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 48, "fields": {"action_time": "2020-11-29T19:47:21.810Z", "user": 1, "content_type": 2, "object_id": "25", "object_repr": "The Idiot", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 49, "fields": {"action_time": "2020-11-29T20:13:35.622Z", "user": 1, "content_type": 15, "object_id": "2", "object_repr": "test_user1", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 50, "fields": {"action_time": "2020-11-29T20:17:08.852Z", "user": 1, "content_type": 15, "object_id": "3", "object_repr": "test_user2", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 51, "fields": {"action_time": "2020-11-29T20:28:04.210Z", "user": 1, "content_type": 11, "object_id": "4", "object_repr": "Action object (4)", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 52, "fields": {"action_time": "2020-11-29T20:28:04.217Z", "user": 1, "content_type": 11, "object_id": "3", "object_repr": "Action object (3)", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 53, "fields": {"action_time": "2020-11-29T20:28:04.223Z", "user": 1, "content_type": 11, "object_id": "2", "object_repr": "Action object (2)", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 54, "fields": {"action_time": "2020-11-29T20:28:04.230Z", "user": 1, "content_type": 11, "object_id": "1", "object_repr": "Action object (1)", "action_flag": 3, "change_message": ""}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add author", "content_type": 1, "codename": "add_author"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change author", "content_type": 1, "codename": "change_author"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete author", "content_type": 1, "codename": "delete_author"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view author", "content_type": 1, "codename": "view_author"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add book", "content_type": 2, "codename": "add_book"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change book", "content_type": 2, "codename": "change_book"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete book", "content_type": 2, "codename": "delete_book"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view book", "content_type": 2, "codename": "view_book"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add genre", "content_type": 3, "codename": "add_genre"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change genre", "content_type": 3, "codename": "change_genre"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete genre", "content_type": 3, "codename": "delete_genre"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view genre", "content_type": 3, "codename": "view_genre"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add book rating", "content_type": 4, "codename": "add_bookrating"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change book rating", "content_type": 4, "codename": "change_bookrating"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete book rating", "content_type": 4, "codename": "delete_bookrating"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view book rating", "content_type": 4, "codename": "view_bookrating"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add book review", "content_type": 5, "codename": "add_bookreview"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change book review", "content_type": 5, "codename": "change_bookreview"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete book review", "content_type": 5, "codename": "delete_bookreview"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view book review", "content_type": 5, "codename": "view_bookreview"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add profile", "content_type": 6, "codename": "add_profile"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change profile", "content_type": 6, "codename": "change_profile"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete profile", "content_type": 6, "codename": "delete_profile"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view profile", "content_type": 6, "codename": "view_profile"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add contact", "content_type": 7, "codename": "add_contact"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change contact", "content_type": 7, "codename": "change_contact"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete contact", "content_type": 7, "codename": "delete_contact"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view contact", "content_type": 7, "codename": "view_contact"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add shelf", "content_type": 8, "codename": "add_shelf"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change shelf", "content_type": 8, "codename": "change_shelf"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete shelf", "content_type": 8, "codename": "delete_shelf"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view shelf", "content_type": 8, "codename": "view_shelf"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add shelf row", "content_type": 9, "codename": "add_shelfrow"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change shelf row", "content_type": 9, "codename": "change_shelfrow"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete shelf row", "content_type": 9, "codename": "delete_shelfrow"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view shelf row", "content_type": 9, "codename": "view_shelfrow"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add shelf item", "content_type": 10, "codename": "add_shelfitem"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change shelf item", "content_type": 10, "codename": "change_shelfitem"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete shelf item", "content_type": 10, "codename": "delete_shelfitem"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view shelf item", "content_type": 10, "codename": "view_shelfitem"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add action", "content_type": 11, "codename": "add_action"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change action", "content_type": 11, "codename": "change_action"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete action", "content_type": 11, "codename": "delete_action"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view action", "content_type": 11, "codename": "view_action"}}, {"model": "auth.permission", "pk": 45, "fields": {"name": "Can add log entry", "content_type": 12, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 46, "fields": {"name": "Can change log entry", "content_type": 12, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 47, "fields": {"name": "Can delete log entry", "content_type": 12, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 48, "fields": {"name": "Can view log entry", "content_type": 12, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 49, "fields": {"name": "Can add permission", "content_type": 13, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 50, "fields": {"name": "Can change permission", "content_type": 13, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 51, "fields": {"name": "Can delete permission", "content_type": 13, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 52, "fields": {"name": "Can view permission", "content_type": 13, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 53, "fields": {"name": "Can add group", "content_type": 14, "codename": "add_group"}}, {"model": "auth.permission", "pk": 54, "fields": {"name": "Can change group", "content_type": 14, "codename": "change_group"}}, {"model": "auth.permission", "pk": 55, "fields": {"name": "Can delete group", "content_type": 14, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 56, "fields": {"name": "Can view group", "content_type": 14, "codename": "view_group"}}, {"model": "auth.permission", "pk": 57, "fields": {"name": "Can add user", "content_type": 15, "codename": "add_user"}}, {"model": "auth.permission", "pk": 58, "fields": {"name": "Can change user", "content_type": 15, "codename": "change_user"}}, {"model": "auth.permission", "pk": 59, "fields": {"name": "Can delete user", "content_type": 15, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 60, "fields": {"name": "Can view user", "content_type": 15, "codename": "view_user"}}, {"model": "auth.permission", "pk": 61, "fields": {"name": "Can add content type", "content_type": 16, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 62, "fields": {"name": "Can change content type", "content_type": 16, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 63, "fields": {"name": "Can delete content type", "content_type": 16, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 64, "fields": {"name": "Can view content type", "content_type": 16, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 65, "fields": {"name": "Can add session", "content_type": 17, "codename": "add_session"}}, {"model": "auth.permission", "pk": 66, "fields": {"name": "Can change session", "content_type": 17, "codename": "change_session"}}, {"model": "auth.permission", "pk": 67, "fields": {"name": "Can delete session", "content_type": 17, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 68, "fields": {"name": "Can view session", "content_type": 17, "codename": "view_session"}}, {"model": "auth.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$216000$spBabZhkRMCz$S+uD81lfIpOjOJwokhrsDuit/j3uJd7PETWPRv1daGw=", "last_login": "2020-11-29T20:27:46.860Z", "is_superuser": true, "username": "opak", "first_name": "Bogdan", "last_name": "Tudorache", "email": "opak@mail.com", "is_staff": true, "is_active": true, "date_joined": "2020-11-29T17:44:40.523Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 4, "fields": {"password": "pbkdf2_sha256$216000$RzpaguqMRb9s$p87YwRgSx29ssEtpiW/v4KQd5a/jOMWORB9PBAjrJIo=", "last_login": "2020-11-29T20:28:17.419Z", "is_superuser": false, "username": "test_user1", "first_name": "Mihai", "last_name": "Popescu", "email": "mihai@mail.com", "is_staff": false, "is_active": true, "date_joined": "2020-11-29T20:17:28.004Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 5, "fields": {"password": "pbkdf2_sha256$216000$Rw95xlRykoMU$VL8lFUOVUhSBUJYeH8jfmCN/vy3knIbo5/jl6kf0pkk=", "last_login": "2020-11-29T20:36:58.563Z", "is_superuser": false, "username": "test_user2", "first_name": "Andrei", "last_name": "Cristea", "email": "andrei@mail.com", "is_staff": false, "is_active": true, "date_joined": "2020-11-29T20:19:45.137Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 6, "fields": {"password": "pbkdf2_sha256$216000$sopaEfawdhUt$UrV9qLWfSWGpiQAPNx89b3v1fDAdTzCVqZk3Rj8CdJo=", "last_login": "2020-11-29T20:34:08.357Z", "is_superuser": false, "username": "big_joe", "first_name": "Andrei", "last_name": "Cojocaru", "email": "andrei@mail.com", "is_staff": false, "is_active": true, "date_joined": "2020-11-29T20:33:55.900Z", "groups": [], "user_permissions": []}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "books", "model": "author"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "books", "model": "book"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "books", "model": "genre"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "books", "model": "bookrating"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "books", "model": "bookreview"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "accounts", "model": "profile"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "social", "model": "contact"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "shelf", "model": "shelf"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "shelf", "model": "shelfrow"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "shelf", "model": "shelfitem"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "actions", "model": "action"}}, {"model": "contenttypes.contenttype", "pk": 12, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 13, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 14, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 15, "fields": {"app_label": "auth", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 16, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 17, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "sessions.session", "pk": "30nt0wdfg3sfp6c3h7r5bm3ncdd3vgb1", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2hBaGCgu3fcMZBgGqRqalHZlvLtt0oVu33v_v0XAbS1ha7yEKYmrAHH5ZRHpyfUQ6YH1Pkua67pMUR6JPG2T45z4dTvbv4OCrexr1OB5QKUduF7zYAGMY9flnRnyBDkZUJqRKCYL2FllVe6ts14nTSQ-X80wN30:1kjTRK:iAiVBi_lCniQ6Xd7__BjU0QYVzzqmi0kDFJiOCK3nfs", "expire_date": "2020-12-13T20:36:58.573Z"}}, {"model": "sessions.session", "pk": "pc3jh2wjwvzg05lxwtucz3rmc328cq4g", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2hAGSwGX7nuGZpiZStVAUtqV8e7apAvd_vfef6kRtzWPW5NlnFldFKjT75aQHlJ2wHcst6qplnWZk94VfdCmh8ryvB7u30HGlr_1ebLeAZGN3jO6CYF6hkgRKBD3Howj6JxFMJ4pdNZIkmRE4pQYg1XvD-RgOFQ:1kjQok:i8H8uyvxIEvWrF1h9mbiRPmTDOgV1boSeH1xDc5JPGs", "expire_date": "2020-12-13T17:48:58.202Z"}}]
+[
+{
+    "model": "books.genre",
+    "pk": 1,
+    "fields": {
+        "genre": "Classics",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 2,
+    "fields": {
+        "genre": "Fiction",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 3,
+    "fields": {
+        "genre": "Literature",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 4,
+    "fields": {
+        "genre": "Adventure",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 5,
+    "fields": {
+        "genre": "Religion",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 6,
+    "fields": {
+        "genre": "Nonfiction",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 7,
+    "fields": {
+        "genre": "Christian",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 8,
+    "fields": {
+        "genre": "Philosophy",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 9,
+    "fields": {
+        "genre": "Poetry",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 10,
+    "fields": {
+        "genre": "Romance",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 11,
+    "fields": {
+        "genre": "Science Fiction",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 12,
+    "fields": {
+        "genre": "Contemporary",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 13,
+    "fields": {
+        "genre": "War",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 14,
+    "fields": {
+        "genre": "Westerns",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 15,
+    "fields": {
+        "genre": "Plays",
+        "description": ""
+    }
+},
+{
+    "model": "books.genre",
+    "pk": 16,
+    "fields": {
+        "genre": "Drama",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 1,
+    "fields": {
+        "first_name": "Herman",
+        "last_name": "Melville",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 2,
+    "fields": {
+        "first_name": null,
+        "last_name": "Various",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 3,
+    "fields": {
+        "first_name": "Fyodor",
+        "last_name": "Dostoyevsky",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 4,
+    "fields": {
+        "first_name": "James",
+        "last_name": "Joyce",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 5,
+    "fields": {
+        "first_name": "Miguel",
+        "last_name": "de Cervantes",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 6,
+    "fields": {
+        "first_name": "Dante",
+        "last_name": "Alighieri",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 7,
+    "fields": {
+        "first_name": "Vladimir",
+        "last_name": "Nabokov",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 8,
+    "fields": {
+        "first_name": null,
+        "last_name": "Homer",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 9,
+    "fields": {
+        "first_name": "Thomas",
+        "last_name": "Pynchon",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 10,
+    "fields": {
+        "first_name": "David Foster",
+        "last_name": "Wallace",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 11,
+    "fields": {
+        "first_name": "John",
+        "last_name": "Williams",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 12,
+    "fields": {
+        "first_name": "Leo",
+        "last_name": "Tolstoy",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 13,
+    "fields": {
+        "first_name": "Cormac",
+        "last_name": "McCarthy",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 14,
+    "fields": {
+        "first_name": "Friedrich",
+        "last_name": "Nietzsche",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 15,
+    "fields": {
+        "first_name": "William",
+        "last_name": "Shakespeare",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 16,
+    "fields": {
+        "first_name": "Albert",
+        "last_name": "Camus",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 17,
+    "fields": {
+        "first_name": "George",
+        "last_name": "Orwell",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 18,
+    "fields": {
+        "first_name": "Marcel",
+        "last_name": "Proust",
+        "description": ""
+    }
+},
+{
+    "model": "books.author",
+    "pk": 19,
+    "fields": {
+        "first_name": "Johann Wolfgang",
+        "last_name": "Goethe",
+        "description": ""
+    }
+},
+{
+    "model": "books.book",
+    "pk": 1,
+    "fields": {
+        "title": "Moby Dick",
+        "author": 1,
+        "description": "\"It is the horrible texture of a fabric that should be woven of ships' cables and hawsers. A Polar wind blows through it, and birds of prey hover over it.\" So Melville wrote of his masterpiece, one of the greatest works of imagination in literary history. In part, Moby-Dick is the story of an eerily compelling madman pursuing an unholy war against a creature as vast and dangerous and unknowable as the sea itself. But more than just a novel of adventure, more than an encyclopaedia of whaling lore and legend, the book can be seen as part of its author's lifelong meditation on America. Written with wonderfully redemptive humour, Moby-Dick is also a profound inquiry into character, faith, and the nature of perception.",
+        "cover": "book_covers/moby_dick.jpg",
+        "num_ratings": 3,
+        "average_rating": 3.6666666666666665,
+        "genre": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 2,
+    "fields": {
+        "title": "The Bible",
+        "author": 2,
+        "description": "The Bible is a collection of religious texts or scriptures sacred to Christians, Jews, Samaritans, Rastafari and others. It appears in the form of an anthology, a compilation of texts of a variety of forms that are all linked by the belief that they are collectively revelations of God. These texts include theologically-focused historical accounts, hymns, prayers, proverbs, parables, didactic letters, erotica, poetry, and prophecies. Believers also generally consider the Bible to be a product of divine inspiration.",
+        "cover": "book_covers/bible_cover.jpg",
+        "num_ratings": 3,
+        "average_rating": 3.0,
+        "genre": [
+            1,
+            5,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+        "title": "The Brothers Karamazov",
+        "author": 3,
+        "description": "The Brothers Karamazov is a murder mystery, a courtroom drama, and an exploration of erotic rivalry in a series of triangular love affairs involving the \"wicked and sentimental\" Fyodor Pavlovich Karamazov and his three sons-the impulsive and sensual Dmitri; the coldly rational Ivan; and the healthy, red-cheeked young novice Alyosha. Through the gripping events of their story, Dostoevsky portrays the whole of Russian life, is social and spiritual striving, in what was both the golden age and a tragic turning point in Russian culture.",
+        "cover": "book_covers/brothers_karamazov.jpg",
+        "num_ratings": 1,
+        "average_rating": 5.0,
+        "genre": [
+            1,
+            2,
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+        "title": "Crime And Punishment",
+        "author": 3,
+        "description": "Raskolnikov, a destitute and desperate former student, wanders through the slums of St Petersburg and commits a random murder without remorse or regret. He imagines himself to be a great man, a Napoleon: acting for a higher purpose beyond conventional moral law. But as he embarks on a dangerous game of cat and mouse with a suspicious police investigator, Raskolnikov is pursued by the growing voice of his conscience and finds the noose of his own guilt tightening around his neck. Only Sonya, a downtrodden prostitute, can offer the chance of redemption.",
+        "cover": "book_covers/crime_and_punishment.jpg",
+        "num_ratings": 2,
+        "average_rating": 4.5,
+        "genre": [
+            1,
+            2,
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 5,
+    "fields": {
+        "title": "Ulysses",
+        "author": 4,
+        "description": "Loosely based on the Odyssey, this landmark of modern literature follows ordinary Dubliners in 1904. Capturing a single day in the life of Dubliner Leopold Bloom, his friends Buck Mulligan and Stephen Dedalus, his wife Molly, and a scintillating cast of supporting characters, Joyce pushes Celtic lyricism and vulgarity to splendid extremes. Captivating experimental techniques range from interior monologues to exuberant wordplay and earthy humor. A major achievement in 20th century literature.",
+        "cover": "book_covers/ulysses.jpg",
+        "num_ratings": 1,
+        "average_rating": 5.0,
+        "genre": [
+            1,
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 6,
+    "fields": {
+        "title": "Don Quixote",
+        "author": 5,
+        "description": "Don Quixote has become so entranced by reading chivalric romances that he determines to become a knight-errant himself. In the company of his faithful squire, Sancho Panza, his exploits blossom in all sorts of wonderful ways. While Quixote's fancy often leads him astray-he tilts at windmills, imagining them to be giants-Sancho acquires cunning and a certain sagacity. Sane madman and wise fool, they roam the world together, and together they have haunted readers' imaginations for nearly four hundred years.",
+        "cover": "book_covers/don_quixote.jpg",
+        "num_ratings": 1,
+        "average_rating": 3.0,
+        "genre": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 7,
+    "fields": {
+        "title": "The Divine Comedy",
+        "author": 6,
+        "description": "The Divine Comedy describes Dante's descent into Hell with Virgil as a guide; his ascent of Mount Purgatory and encounter with his dead love, Beatrice; and finally, his arrival in Heaven. Examining questions of faith, desire and enlightenment, the poem is a brilliantly nuanced and moving allegory of human redemption.",
+        "cover": "book_covers/divine_comedy.jpg",
+        "num_ratings": 1,
+        "average_rating": 5.0,
+        "genre": [
+            1,
+            2,
+            3,
+            9
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 8,
+    "fields": {
+        "title": "Lolita",
+        "author": 7,
+        "description": "Humbert Humbert - scholar, aesthete and romantic - has fallen completely and utterly in love with Lolita Haze, his landlady's gum-snapping, silky skinned twelve-year-old daughter. Reluctantly agreeing to marry Mrs Haze just to be close to Lolita, Humbert suffers greatly in the pursuit of romance; but when Lo herself starts looking for attention elsewhere, he will carry her off on a desperate cross-country misadventure, all in the name of Love. Hilarious, flamboyant, heart-breaking and full of ingenious word play, Lolita is an immaculate, unforgettable masterpiece of obsession, delusion and lust.",
+        "cover": "book_covers/lolita.jpg",
+        "num_ratings": 1,
+        "average_rating": 4.0,
+        "genre": [
+            1,
+            2,
+            3,
+            10
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 9,
+    "fields": {
+        "title": "The Iliad",
+        "author": 8,
+        "description": "Dating to the ninth century B.C., Homer's timeless poem still vividly conveys the horror and heroism of men and gods wrestling with towering emotions and battling amidst devastation and destruction, as it moves inexorably to the wrenching, tragic conclusion of the Trojan War. Renowned classicist Bernard Knox observes in his superb introduction that although the violence of the Iliad is grim and relentless, it coexists with both images of civilized life and a poignant yearning for peace.",
+        "cover": "book_covers/the_iliad.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            9
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 10,
+    "fields": {
+        "title": "Gravity's Rainbow",
+        "author": 9,
+        "description": "Winner of the 1973 National Book Award, Gravity's Rainbow is a postmodern epic, a work as exhaustively significant to the second half of the 20th century as Joyce's Ulysses was to the first. Its sprawling, encyclopedic narrative, and penetrating analysis of the impact of technology on society make it an intellectual tour de force.",
+        "cover": "book_covers/gravitys_rainbow.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            11
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 11,
+    "fields": {
+        "title": "Infinite Jest",
+        "author": 10,
+        "description": "Set in an addicts' halfway house and a tennis academy, and featuring the most endearingly screwed-up family to come along in recent fiction, Infinite Jest explores essential questions about what entertainment is and why it has come to so dominate our lives; about how our desire for entertainment affects our need to connect with other people; and about what the pleasures we choose say about who we are.",
+        "cover": "book_covers/infinite_jest.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            12
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 12,
+    "fields": {
+        "title": "The Odyssey",
+        "author": 8,
+        "description": "If the Iliad is the world's greatest war epic, then the Odyssey is literature's grandest evocation of everyman's journey though life. Odysseus' reliance on his wit and wiliness for survival in his encounters with divine and natural forces, during his ten-year voyage home to Ithaca after the Trojan War, is at once a timeless human story and an individual test of moral endurance.",
+        "cover": "book_covers/the_odyssey.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            4,
+            9
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 13,
+    "fields": {
+        "title": "Stoner",
+        "author": 11,
+        "description": "William Stoner is born at the end of the nineteenth century into a dirt-poor Missouri farming family. Sent to the state university to study agronomy, he instead falls in love with English literature and embraces a scholar's life, so different from the hardscrabble existence he has known. And yet as the years pass, Stoner encounters a succession of disappointments: marriage into a \"proper\" family estranges him from his parents; his career is stymied; his wife and daughter turn coldly away from him; a transforming experience of new love ends under threat of scandal. Driven ever deeper within himself, Stoner rediscovers the stoic silence of his forebears and confronts an essential solitude.",
+        "cover": "book_covers/stoner.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 14,
+    "fields": {
+        "title": "Anna Karenina",
+        "author": 12,
+        "description": "Acclaimed by many as the world's greatest novel, Anna Karenina provides a vast panorama of contemporary life in Russia and of humanity in general. In it Tolstoy uses his intense imaginative insight to create some of the most memorable characters in all of literature. Anna is a sophisticated woman who abandons her empty existence as the wife of Karenin and turns to Count Vronsky to fulfil her passionate nature - with tragic consequences. Levin is a reflection of Tolstoy himself, often expressing the author's own views and convictions.",
+        "cover": "book_covers/anna_karenina.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            10
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 15,
+    "fields": {
+        "title": "War And Peace",
+        "author": 12,
+        "description": "In Russia's struggle with Napoleon, Tolstoy saw a tragedy that involved all mankind. Greater than a historical chronicle, War and Peace is an affirmation of life itself, 'a complete picture', as a contemporary reviewer put it, 'of everything in which people find their happiness and greatness, their grief and humiliation'. Tolstoy gave his personal approval to this translation, published here in a new single volume edition, which includes an introduction by Henry Gifford, and Tolstoy's important essay 'Some Words about War and Peace'.",
+        "cover": "book_covers/war_and_peace.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            13
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 16,
+    "fields": {
+        "title": "Blood Meridian",
+        "author": 13,
+        "description": "Blood Meridian is an epic novel of the violence and depravity that attended America's westward expansion, brilliantly subverting the conventions of the Western novel and the mythology of the Wild West. Based on historical events that took place on the Texas-Mexico border in the 1850s, it traces the fortunes of the Kid, a fourteen-year-old Tennesseean who stumbles into a nightmarish world where Indians are being murdered and the market for their scalps is thriving.",
+        "cover": "book_covers/blood_meridian.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            14
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 17,
+    "fields": {
+        "title": "Notes From Underground",
+        "author": 3,
+        "description": "Dostoevsky's most revolutionary novel, Notes from Underground marks the dividing line between nineteenth- and twentieth-century fiction, and between the visions of self each century embodied. One of the most remarkable characters in literature, the unnamed narrator is a former official who has defiantly withdrawn into an underground existence. In complete retreat from society, he scrawls a passionate, obsessive, self-contradictory narrative that serves as a devastating attack on social utopianism and an assertion of man's essentially irrational nature.",
+        "cover": "book_covers/notes_from_underground.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 18,
+    "fields": {
+        "title": "Thus Spoke Zarathustra",
+        "author": 14,
+        "description": "Thus Spoke Zarathustra is a foundational work of Western literature and is widely considered to be Friedrich Nietzsche's masterpiece. It includes the German philosopher's famous discussion of the phrase 'God is dead' as well as his concept of the Superman. Nietzsche delineates his Will to Power theory and devotes pages to critiquing Christian thinking, in particular Christianity's definition of good and evil.",
+        "cover": "book_covers/thus_spoke_zarathustra.jpg",
+        "num_ratings": 1,
+        "average_rating": 5.0,
+        "genre": [
+            1,
+            3,
+            6,
+            8
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 19,
+    "fields": {
+        "title": "Hamlet",
+        "author": 15,
+        "description": "Among Shakespeare's plays, \"Hamlet\" is considered by many his masterpiece. Among actors, the role of Hamlet, Prince of Denmark, is considered the jewel in the crown of a triumphant theatrical career. Now Kenneth Branagh plays the leading role and co-directs a brillant ensemble performance. Three generations of legendary leading actors, many of whom first assembled for the Oscar-winning film \"Henry V\", gather here to perform the rarely heard complete version of the play. This clear, subtly nuanced, stunning dramatization, presented by The Renaissance Theatre Company in association with \"Bbc\" Broadcasting, features such luminaries as Sir John Gielgud, Derek Jacobi, Emma Thompson and Christopher Ravenscroft. It combines a full cast with stirring music and sound effects to bring this magnificent Shakespearen classic vividly to life. Revealing new riches with each listening, this production of \"Hamlet\" is an invaluable aid for students, teachers and all true lovers of Shakespeare - a recording to be treasured for decades to come.",
+        "cover": "book_covers/hamlet.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            15,
+            16
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 20,
+    "fields": {
+        "title": "The Stranger",
+        "author": 16,
+        "description": "Through the story of an ordinary man unwittingly drawn into a senseless murder on an Algerian beach, Camus explored what he termed \"the nakedness of man faced with the absurd.\" First published in English in 1946; now in a new translation by Matthew Ward.",
+        "cover": "book_covers/the_stranger.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 21,
+    "fields": {
+        "title": "1984",
+        "author": 17,
+        "description": "Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian, bureaucratic world and one poor stiff's attempt to find individuality. The brilliance of the novel is Orwell's prescience of modern life-the ubiquity of television, the distortion of the language-and his ability to construct such a thorough version of hell. Required reading for students since it was published, it ranks among the most terrifying novels ever written.",
+        "cover": "book_covers/1984.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            11
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 22,
+    "fields": {
+        "title": "In Search Of Lost Time",
+        "author": 18,
+        "description": "For this complete, authoritative English-language edition, D. J. Enright has revised the late Terence Kilmartin's acclaimed reworking of C. K. Scott Moncrieff's translation to take into account the new definitive French editions of 'A la recherche du temps perdu' (the final volume of these new editions was published by the Bibliotheque de la Pleiade in 1989).",
+        "cover": "book_covers/in_search_of_lost_time.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 23,
+    "fields": {
+        "title": "Dubliners",
+        "author": 4,
+        "description": "This work of art reflects life in Ireland at the turn of the last century, and by rejecting euphemism, reveals to the Irish their unromantic realities. Each of the 15 stories offers glimpses into the lives of ordinary Dubliners, and collectively they paint a portrait of a nation.",
+        "cover": "book_covers/dubliners.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 24,
+    "fields": {
+        "title": "Faust",
+        "author": 19,
+        "description": "Goethe's masterpiece and perhaps the greatest work in German literature, Faust has made the legendary German alchemist one of the central myths of the Western world. Here indeed is a monumental Faust, an audacious man boldly wagering with the devil, Mephistopheles, that no magic, sensuality, experience, or knowledge can lead him to a moment he would wish to last forever. Here, in Faust, Part I, the tremendous versatility of Goethe's genius creates some of the most beautiful passages in literature. Here too we experience Goethe's characteristic humor, the excitement and eroticism of the witches' Walpurgis Night, and the moving emotion of Gretchen's tragic fate.",
+        "cover": "book_covers/faust.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            9,
+            15
+        ]
+    }
+},
+{
+    "model": "books.book",
+    "pk": 25,
+    "fields": {
+        "title": "The Idiot",
+        "author": 3,
+        "description": "Returning to Russia from a sanitarium in Switzerland, the Christ-like epileptic Prince Myshkin finds himself enmeshed in a tangle of love, torn between two women-the notorious kept woman Nastasya and the pure Aglaia-both involved, in turn, with the corrupt, money-hungry Ganya. In the end, Myshkin's honesty, goodness, and integrity are shown to be unequal to the moral emptiness of those around him.",
+        "cover": "book_covers/the_idiot.jpg",
+        "num_ratings": 0,
+        "average_rating": 0.0,
+        "genre": [
+            1,
+            2,
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$spBabZhkRMCz$S+uD81lfIpOjOJwokhrsDuit/j3uJd7PETWPRv1daGw=",
+        "last_login": "2020-12-16T18:28:35.851Z",
+        "is_superuser": true,
+        "username": "opak",
+        "first_name": "Bogdan",
+        "last_name": "Tudorache",
+        "email": "opak@mail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-11-29T17:44:40.523Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$RzpaguqMRb9s$p87YwRgSx29ssEtpiW/v4KQd5a/jOMWORB9PBAjrJIo=",
+        "last_login": "2020-11-29T20:28:17.419Z",
+        "is_superuser": false,
+        "username": "test_user1",
+        "first_name": "Mihai",
+        "last_name": "Popescu",
+        "email": "mihai@mail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-11-29T20:17:28.004Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$Rw95xlRykoMU$VL8lFUOVUhSBUJYeH8jfmCN/vy3knIbo5/jl6kf0pkk=",
+        "last_login": "2020-11-29T20:36:58.563Z",
+        "is_superuser": false,
+        "username": "test_user2",
+        "first_name": "Andrei",
+        "last_name": "Cristea",
+        "email": "andrei@mail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-11-29T20:19:45.137Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$216000$sopaEfawdhUt$UrV9qLWfSWGpiQAPNx89b3v1fDAdTzCVqZk3Rj8CdJo=",
+        "last_login": "2020-11-29T20:34:08.357Z",
+        "is_superuser": false,
+        "username": "big_joe",
+        "first_name": "Andrei",
+        "last_name": "Cojocaru",
+        "email": "andrei@mail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-11-29T20:33:55.900Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "0hm5tzx1dgiftmzhgsgi8e8cqgb0qpmu",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hAGSwGX7nuGZpiZStVAUtqV8e7apAvd_vfef6kRtzWPW5NlnFldFKjT75aQHlJ2wHcst6qplnWZk94VfdCmh8ryvB7u30HGlr_1ebLeAZGN3jO6CYF6hkgRKBD3Howj6JxFMJ4pdNZIkmRE4pQYg1XvD-RgOFQ:1kpbXP:zbfI4vsyj_aUXKa01eoE2mGK0iw0gGhmg0Yc_d4JEWo",
+        "expire_date": "2020-12-30T18:28:35.860Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "pc3jh2wjwvzg05lxwtucz3rmc328cq4g",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hAGSwGX7nuGZpiZStVAUtqV8e7apAvd_vfef6kRtzWPW5NlnFldFKjT75aQHlJ2wHcst6qplnWZk94VfdCmh8ryvB7u30HGlr_1ebLeAZGN3jO6CYF6hkgRKBD3Howj6JxFMJ4pdNZIkmRE4pQYg1XvD-RgOFQ:1kjQok:i8H8uyvxIEvWrF1h9mbiRPmTDOgV1boSeH1xDc5JPGs",
+        "expire_date": "2020-12-13T17:48:58.202Z"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2020-12-16T18:34:23.935Z",
+        "user": [
+            "opak"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "5",
+        "object_repr": "test_user10",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "started following",
+        "target_ct": [
+            "auth",
+            "user"
+        ],
+        "target_id": 4,
+        "created": "2020-11-29T20:19:23.232Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "started following",
+        "target_ct": [
+            "auth",
+            "user"
+        ],
+        "target_id": 5,
+        "created": "2020-11-29T20:19:56.751Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 7,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 1,
+        "created": "2020-11-29T20:20:05.634Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 8,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 1,
+        "created": "2020-11-29T20:20:21.930Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 9,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 3,
+        "created": "2020-11-29T20:20:26.910Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 10,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 2,
+        "created": "2020-11-29T20:20:51.339Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 11,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 3,
+        "created": "2020-11-29T20:20:59.139Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 12,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 2,
+        "created": "2020-11-29T20:21:13.375Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 13,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 16,
+        "created": "2020-11-29T20:21:54.108Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 14,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 3,
+        "created": "2020-11-29T20:24:10.813Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 15,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 16,
+        "created": "2020-11-29T20:24:15.094Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 16,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 4,
+        "created": "2020-11-29T20:24:18.296Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 17,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 2,
+        "created": "2020-11-29T20:24:28.491Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 18,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 7,
+        "created": "2020-11-29T20:24:44.818Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 19,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 4,
+        "created": "2020-11-29T20:24:57.003Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 20,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "started following",
+        "target_ct": [
+            "auth",
+            "user"
+        ],
+        "target_id": 1,
+        "created": "2020-11-29T20:28:53.629Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 21,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 5,
+        "created": "2020-11-29T20:30:38.267Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 22,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 1,
+        "created": "2020-11-29T20:30:43.948Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 23,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 10,
+        "created": "2020-11-29T20:30:48.572Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 24,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 2,
+        "created": "2020-11-29T20:30:55.677Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 25,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 6,
+        "created": "2020-11-29T20:31:11.489Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 26,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 4,
+        "created": "2020-11-29T20:31:26.175Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 27,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 11,
+        "created": "2020-11-29T20:31:28.675Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 28,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 7,
+        "created": "2020-11-29T20:31:41.412Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 29,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 8,
+        "created": "2020-11-29T20:32:01.376Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 30,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 8,
+        "created": "2020-11-29T20:32:08.910Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 31,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 10,
+        "created": "2020-11-29T20:32:36.254Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 32,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 12,
+        "created": "2020-11-29T20:33:05.072Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 33,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "verb": "started following",
+        "target_ct": [
+            "auth",
+            "user"
+        ],
+        "target_id": 1,
+        "created": "2020-11-29T20:35:01.071Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 34,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "verb": "started following",
+        "target_ct": [
+            "auth",
+            "user"
+        ],
+        "target_id": 5,
+        "created": "2020-11-29T20:35:07.420Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 35,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 1,
+        "created": "2020-11-29T20:35:23.107Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 36,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 9,
+        "created": "2020-11-29T20:35:36.650Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 37,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 17,
+        "created": "2020-11-29T20:35:47.107Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 38,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 6,
+        "created": "2020-11-29T20:35:56.120Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 39,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 10,
+        "created": "2020-11-29T20:36:20.919Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 40,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 5,
+        "created": "2020-11-29T20:36:32.770Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 41,
+    "fields": {
+        "user": [
+            "test_user2"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 2,
+        "created": "2020-11-29T20:37:52.360Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 42,
+    "fields": {
+        "user": [
+            "test_user2"
+        ],
+        "verb": "reviewed book",
+        "target_ct": [
+            "books",
+            "bookreview"
+        ],
+        "target_id": 11,
+        "created": "2020-11-29T20:38:01.504Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 43,
+    "fields": {
+        "user": [
+            "test_user2"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 13,
+        "created": "2020-11-29T20:38:05.257Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 44,
+    "fields": {
+        "user": [
+            "test_user2"
+        ],
+        "verb": "added book to shelf",
+        "target_ct": [
+            "shelf",
+            "shelfrow"
+        ],
+        "target_id": 20,
+        "created": "2020-11-29T20:38:28.760Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 45,
+    "fields": {
+        "user": [
+            "test_user2"
+        ],
+        "verb": "rated",
+        "target_ct": [
+            "books",
+            "book"
+        ],
+        "target_id": 18,
+        "created": "2020-11-29T20:38:47.625Z"
+    }
+},
+{
+    "model": "actions.action",
+    "pk": 46,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "verb": "started following",
+        "target_ct": [
+            "auth",
+            "user"
+        ],
+        "target_id": 6,
+        "created": "2020-12-12T12:12:56.465Z"
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 1,
+    "fields": {
+        "owner": [
+            "opak"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 3,
+        "book": 1
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 4,
+    "fields": {
+        "owner": [
+            "opak"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 2,
+        "book": 6
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 6,
+    "fields": {
+        "owner": [
+            "opak"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 2,
+        "book": 8
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 7,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 10,
+        "book": 1
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 8,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 10,
+        "book": 2
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 9,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 11,
+        "book": 4
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 10,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 10,
+        "book": 8
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 11,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 12,
+        "book": 5
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 12,
+    "fields": {
+        "owner": [
+            "big_joe"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 17,
+        "book": 1
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 13,
+    "fields": {
+        "owner": [
+            "big_joe"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 17,
+        "book": 6
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 14,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 13,
+        "book": 2
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 15,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 20,
+        "book": 3
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 16,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 20,
+        "book": 17
+    }
+},
+{
+    "model": "shelf.shelfitem",
+    "pk": 17,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ],
+        "datetime": "2020-11-29",
+        "shelf_row": 20,
+        "book": 18
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 1,
+    "fields": {
+        "owner": [
+            "opak"
+        ],
+        "name": "Currently reading",
+        "shelf": 1,
+        "num_items": 0,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 2,
+    "fields": {
+        "owner": [
+            "opak"
+        ],
+        "name": "Want to Read",
+        "shelf": 1,
+        "num_items": 2,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 3,
+    "fields": {
+        "owner": [
+            "opak"
+        ],
+        "name": "Read",
+        "shelf": 1,
+        "num_items": 1,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 10,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ],
+        "name": "Read",
+        "shelf": 4,
+        "num_items": 3,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 11,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ],
+        "name": "Currently Reading",
+        "shelf": 4,
+        "num_items": 1,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 12,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ],
+        "name": "Want to Read",
+        "shelf": 4,
+        "num_items": 1,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 13,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ],
+        "name": "Read",
+        "shelf": 5,
+        "num_items": 1,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 14,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ],
+        "name": "Currently Reading",
+        "shelf": 5,
+        "num_items": 0,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 15,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ],
+        "name": "Want to Read",
+        "shelf": 5,
+        "num_items": 0,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 17,
+    "fields": {
+        "owner": [
+            "big_joe"
+        ],
+        "name": "Read",
+        "shelf": 6,
+        "num_items": 2,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 18,
+    "fields": {
+        "owner": [
+            "big_joe"
+        ],
+        "name": "Currently Reading",
+        "shelf": 6,
+        "num_items": 0,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 19,
+    "fields": {
+        "owner": [
+            "big_joe"
+        ],
+        "name": "Want to Read",
+        "shelf": 6,
+        "num_items": 0,
+        "is_default": true
+    }
+},
+{
+    "model": "shelf.shelfrow",
+    "pk": 20,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ],
+        "name": "Philosophy list",
+        "shelf": 5,
+        "num_items": 3,
+        "is_default": false
+    }
+},
+{
+    "model": "shelf.shelf",
+    "pk": 1,
+    "fields": {
+        "owner": [
+            "opak"
+        ]
+    }
+},
+{
+    "model": "shelf.shelf",
+    "pk": 4,
+    "fields": {
+        "owner": [
+            "test_user1"
+        ]
+    }
+},
+{
+    "model": "shelf.shelf",
+    "pk": 5,
+    "fields": {
+        "owner": [
+            "test_user2"
+        ]
+    }
+},
+{
+    "model": "shelf.shelf",
+    "pk": 6,
+    "fields": {
+        "owner": [
+            "big_joe"
+        ]
+    }
+},
+{
+    "model": "social.contact",
+    "pk": 6,
+    "fields": {
+        "user_from": [
+            "opak"
+        ],
+        "user_to": [
+            "test_user1"
+        ],
+        "created": "2020-11-29T20:19:23.215Z"
+    }
+},
+{
+    "model": "social.contact",
+    "pk": 8,
+    "fields": {
+        "user_from": [
+            "test_user1"
+        ],
+        "user_to": [
+            "opak"
+        ],
+        "created": "2020-11-29T20:28:53.618Z"
+    }
+},
+{
+    "model": "social.contact",
+    "pk": 9,
+    "fields": {
+        "user_from": [
+            "big_joe"
+        ],
+        "user_to": [
+            "opak"
+        ],
+        "created": "2020-11-29T20:35:01.060Z"
+    }
+},
+{
+    "model": "social.contact",
+    "pk": 10,
+    "fields": {
+        "user_from": [
+            "big_joe"
+        ],
+        "user_to": [
+            "test_user2"
+        ],
+        "created": "2020-11-29T20:35:07.412Z"
+    }
+},
+{
+    "model": "social.contact",
+    "pk": 11,
+    "fields": {
+        "user_from": [
+            "opak"
+        ],
+        "user_to": [
+            "big_joe"
+        ],
+        "created": "2020-12-12T12:12:56.447Z"
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "opak"
+        ],
+        "location": "Focsean",
+        "date_of_birth": "1999-11-17",
+        "photo": "default_profile.jpg"
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 4,
+    "fields": {
+        "user": [
+            "test_user1"
+        ],
+        "location": "Romania",
+        "date_of_birth": "2000-10-10",
+        "photo": "default_profile.jpg"
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "test_user2"
+        ],
+        "location": "Focsani",
+        "date_of_birth": "2000-05-04",
+        "photo": "default_profile.jpg"
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "big_joe"
+        ],
+        "location": "Bucharest",
+        "date_of_birth": "2001-09-01",
+        "photo": "default_profile.jpg"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 1,
+    "fields": {
+        "book_reviewed": 1,
+        "reviewer": [
+            "opak"
+        ],
+        "text": "Very nice book. I loved the part about the whale!",
+        "datetime": "2020-11-29T20:20:21.916Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 2,
+    "fields": {
+        "book_reviewed": 3,
+        "reviewer": [
+            "opak"
+        ],
+        "text": "My favourite book! Alyosha is the best!",
+        "datetime": "2020-11-29T20:21:13.366Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 3,
+    "fields": {
+        "book_reviewed": 4,
+        "reviewer": [
+            "opak"
+        ],
+        "text": "Another classic by my favourite author",
+        "datetime": "2020-11-29T20:24:10.800Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 4,
+    "fields": {
+        "book_reviewed": 7,
+        "reviewer": [
+            "opak"
+        ],
+        "text": "Reading this book is like looking to the sun",
+        "datetime": "2020-11-29T20:24:56.994Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 5,
+    "fields": {
+        "book_reviewed": 1,
+        "reviewer": [
+            "test_user1"
+        ],
+        "text": "I liked this book very much",
+        "datetime": "2020-11-29T20:30:38.252Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 6,
+    "fields": {
+        "book_reviewed": 2,
+        "reviewer": [
+            "test_user1"
+        ],
+        "text": "A must read, but It was a drag.",
+        "datetime": "2020-11-29T20:31:11.476Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 7,
+    "fields": {
+        "book_reviewed": 4,
+        "reviewer": [
+            "test_user1"
+        ],
+        "text": "Currently reading this but I don't like it very much",
+        "datetime": "2020-11-29T20:31:41.396Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 8,
+    "fields": {
+        "book_reviewed": 8,
+        "reviewer": [
+            "test_user1"
+        ],
+        "text": "It was an ok book.",
+        "datetime": "2020-11-29T20:32:08.896Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 9,
+    "fields": {
+        "book_reviewed": 1,
+        "reviewer": [
+            "big_joe"
+        ],
+        "text": "Just talking about some whales. Pretty boring.",
+        "datetime": "2020-11-29T20:35:36.640Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 10,
+    "fields": {
+        "book_reviewed": 6,
+        "reviewer": [
+            "big_joe"
+        ],
+        "text": "What a childish book. How can you hit some windmills?",
+        "datetime": "2020-11-29T20:36:20.908Z"
+    }
+},
+{
+    "model": "books.bookreview",
+    "pk": 11,
+    "fields": {
+        "book_reviewed": 2,
+        "reviewer": [
+            "test_user2"
+        ],
+        "text": "Must read for every christian!",
+        "datetime": "2020-11-29T20:38:01.495Z"
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 1,
+    "fields": {
+        "rated_by": [
+            "opak"
+        ],
+        "rate": 4,
+        "book_rated": 1
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 2,
+    "fields": {
+        "rated_by": [
+            "opak"
+        ],
+        "rate": 3,
+        "book_rated": 2
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 3,
+    "fields": {
+        "rated_by": [
+            "opak"
+        ],
+        "rate": 5,
+        "book_rated": 3
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 4,
+    "fields": {
+        "rated_by": [
+            "opak"
+        ],
+        "rate": 5,
+        "book_rated": 4
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 5,
+    "fields": {
+        "rated_by": [
+            "opak"
+        ],
+        "rate": 5,
+        "book_rated": 7
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 6,
+    "fields": {
+        "rated_by": [
+            "test_user1"
+        ],
+        "rate": 5,
+        "book_rated": 1
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 7,
+    "fields": {
+        "rated_by": [
+            "test_user1"
+        ],
+        "rate": 2,
+        "book_rated": 2
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 8,
+    "fields": {
+        "rated_by": [
+            "test_user1"
+        ],
+        "rate": 4,
+        "book_rated": 4
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 9,
+    "fields": {
+        "rated_by": [
+            "test_user1"
+        ],
+        "rate": 4,
+        "book_rated": 8
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 10,
+    "fields": {
+        "rated_by": [
+            "big_joe"
+        ],
+        "rate": 2,
+        "book_rated": 1
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 11,
+    "fields": {
+        "rated_by": [
+            "big_joe"
+        ],
+        "rate": 3,
+        "book_rated": 6
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 12,
+    "fields": {
+        "rated_by": [
+            "big_joe"
+        ],
+        "rate": 5,
+        "book_rated": 5
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 13,
+    "fields": {
+        "rated_by": [
+            "test_user2"
+        ],
+        "rate": 4,
+        "book_rated": 2
+    }
+},
+{
+    "model": "books.bookrating",
+    "pk": 14,
+    "fields": {
+        "rated_by": [
+            "test_user2"
+        ],
+        "rate": 5,
+        "book_rated": 18
+    }
+}
+]

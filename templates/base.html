@@ -58,7 +58,7 @@
                 <a class="nav-link" href="{% url "register" %}">Register</a>
               </li>
               <li class="nav-item {% if section == "login" %}active{% endif %}">
-                <a class="nav-link " href="{% url "login" %}">Login</a>
+                <a id="login-button" class="nav-link " href="{% url "login" %}">Login</a>
               </li>
             {% endif %}
           </ul>
