@@ -8,6 +8,6 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ book_review_form|crispy }}
-    <button type="submit" class="btn btn-success">Write review</button>
+    <button id="review-button" type="submit" class="btn btn-success">Write review</button>
   </form>
 {% endblock %}
