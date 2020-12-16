@@ -3,3 +3,4 @@ __pycache__/
 .idea/
 *.sqlite3
 media/profile_covers
+geckodriver.log

@@ -71,6 +71,7 @@ class BookModelTest(TestCase):
         self.assertEquals(new_book.genre.first(), self.genre)
         self.assertEquals(new_book.genre.last(), genre_drama)
 
+    # test only works on windows
     def test_book_with_custom_cover(self):
         new_book = Book.objects.create(title='Crime And Punishment', author=self.author)
         new_book.genre.add(self.genre)
