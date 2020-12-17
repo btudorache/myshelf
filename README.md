@@ -18,6 +18,7 @@ python3 manage.py migrate                       # create database tables/fields
 python3 manage.py loaddata db.json              # load initial data
 python3 manage.py runserver                     # run local server
 ```
+Go to the local server at: *http://localhost:8000/*
 
 ## Features
 
