@@ -4,7 +4,7 @@ A *social platform* and *book database* for people who love reading. Built with 
 
 ## Setup - Ubuntu/MacOS
 
-**Requirements: Python3, Pip**
+**Requirements: Python3, Pip**.
 
 Clone the repository locally:
 
@@ -22,10 +22,10 @@ python3 manage.py runserver                     # run local server
 ## Features
 
 Some of the main features of the app:
-* login, register and other account related functionalities
-* follow system and action feed
-* book database with rating and review functionalities
-* 'shelf' where you can store read books, currently reading books and other custom categories
+* login, register and other account related functionalities;
+* follow system and action feed;
+* book database with rating and review functionalities;
+* 'shelf' where you can store read books, currently reading books and other custom categories.
 
 ## Testing
 
@@ -42,3 +42,31 @@ For the functional tests in *functional_tests*, **Selenium** and **GeckoDriver**
 ```
 python3 manage.py test functional_tests
 ```
+
+## Media
+
+Media presenting the app main features:
+
+Main Page
+
+![main](https://github.com/btudorache/myshelf/blob/master/readme_media/main_page.PNG)
+
+Customized Dashboard
+
+![dashboard](https://github.com/btudorache/myshelf/blob/master/readme_media/dashboard.PNG)
+
+Shelf Rows
+
+![shelf](https://github.com/btudorache/myshelf/blob/master/readme_media/shelf_rows.PNG)
+
+Book Search Section
+
+![book_search](https://github.com/btudorache/myshelf/blob/master/readme_media/book_search.PNG)
+
+Book Detail
+
+![book_detail](https://github.com/btudorache/myshelf/blob/master/readme_media/book_detail.PNG)
+
+User Profile
+
+![profile](https://github.com/btudorache/myshelf/blob/master/readme_media/profile.PNG)
