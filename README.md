@@ -38,7 +38,7 @@ python3 manage.py test
 
 **Note:** test *test_book_with_custom_cover()* in the books app works only on Windows systems.
 
-For the functional tests in *functional_tests*, **Selenium** and **GeckoDriver** is also required:
+For the functional tests in *functional_tests*, **Selenium** and **GeckoDriver** are also required:
 
 ```
 python3 manage.py test functional_tests
