@@ -20,6 +20,12 @@ python3 manage.py runserver                     # run local server
 ```
 Go to the local server at: *http://localhost:8000/*
 
+You can also set up the app with **Docker** and **Docker Compose**:
+
+```
+docker-compose up -d
+```
+
 ## Features
 
 Some of the main features of the app:
