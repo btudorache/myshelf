@@ -52,9 +52,16 @@ class Book(models.Model):
             img.thumbnail(output_size)
             img.save(self.cover.path)
 
+    @staticmethod
+    def create_single_search_query(word):
+        qs = Q(title__icontains=word) \
+             | Q(author__first_name__contains=word) \
+             | Q(author__last_name__contains=word)
+        return qs
+
     # create Q query list for books objects filter from search bar input
     @staticmethod
-    def create_search_query(words):
+    def create_more_search_queries(words):
         qs = [Q(title__icontains=word) |
               Q(author__first_name__contains=word) |
               Q(author__last_name__contains=word) for word in words]

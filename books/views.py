@@ -34,7 +34,9 @@ def book_search_list(request, genre_id=None, author_id=None):
             if len(search_object) == 1:
                 books = []
             else:
-                books = Book.objects.filter(Book.create_search_query(search_object.split()))
+                books = Book.objects.filter(Book.create_single_search_query(search_object))
+                if not books.exists():
+                    books = Book.objects.filter(Book.create_more_search_queries(search_object.split()))
     else:
         books = Book.objects.all()
     genres = Genre.objects.all()
