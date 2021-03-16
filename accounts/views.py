@@ -40,6 +40,8 @@ def register(request):
             # Add initial shelf + shelf rows
             Shelf.add_new_user_shelf(new_user)
             return render(request, 'accounts/register_done.html', {'new_user': new_user})
+        else:
+            return render(request, 'accounts/register.html', {'user_form': user_form, 'section': 'register'})
     else:
         user_form = UserRegistrationForm()
         return render(request, 'accounts/register.html', {'user_form': user_form, 'section': 'register'})
