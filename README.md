@@ -56,24 +56,24 @@ Media presenting the app main features:
 
 Main Page
 
-![main](https://github.com/btudorache/myshelf/blob/master/readme_media/main_page.PNG)
+![main](./readme_media/main_page.PNG)
 
 Customized Dashboard
 
-![dashboard](https://github.com/btudorache/myshelf/blob/master/readme_media/dashboard.PNG)
+![dashboard](.r/readme_media/dashboard.PNG)
 
 Shelf Rows
 
-![shelf](https://github.com/btudorache/myshelf/blob/master/readme_media/shelf_rows.PNG)
+![shelf](./readme_media/shelf_rows.PNG)
 
 Book Search Section
 
-![book_search](https://github.com/btudorache/myshelf/blob/master/readme_media/book_search.PNG)
+![book_search](./readme_media/book_search.PNG)
 
 Book Detail
 
-![book_detail](https://github.com/btudorache/myshelf/blob/master/readme_media/book_detail.PNG)
+![book_detail](./readme_media/book_detail.PNG)
 
 User Profile
 
-![profile](https://github.com/btudorache/myshelf/blob/master/readme_media/profile.PNG)
+![profile](./readme_media/profile.PNG)
