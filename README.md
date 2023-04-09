@@ -60,7 +60,7 @@ Main Page
 
 Customized Dashboard
 
-![dashboard](.r/readme_media/dashboard.PNG)
+![dashboard](./readme_media/dashboard.PNG)
 
 Shelf Rows
 
